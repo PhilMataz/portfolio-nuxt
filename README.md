@@ -1,75 +1,91 @@
-# Nuxt Minimal Starter
+# Personal Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern, responsive portfolio website showcasing my work experience, projects, and professional journey. Built with Nuxt 3 for performance and clean user experience.
 
-## Setup
+## 🌟 Features
 
-Make sure to install dependencies:
+- **Project Showcase**: Interactive gallery of my work and contributions
+- **Professional Experience**: Detailed overview of my work history
+- **Downloadable CV**: Access to my latest curriculum vitae
+- **Responsive Design**: Seamless experience across all devices
+- **Contact Form**: Direct way to reach out
 
-```bash
-# npm
-npm install
+## 🛠️ Tech Stack
 
-# pnpm
-pnpm install
+- **Framework**: Nuxt 3
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide Icons
+- **Deployment**: Vercel
 
-# yarn
-yarn install
+## 🚀 Getting Started
 
-# bun
-bun install
-```
+1. **Clone the repository**
 
-## Development Server
+   ```bash
+   git clone https://github.com/PhilMataz/portfolio-nuxt
+   cd portfolio
+   ```
 
-Start the development server on `http://localhost:3000`:
+2. **Install dependencies**
 
-```bash
-# npm
-npm run dev
+   ```bash
+   bun install
+   ```
 
-# pnpm
-pnpm dev
+3. **Start development server**
+   ```bash
+   bun run dev
+   ```
+   Visit `http://localhost:3000`
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
+## 📝 Available Scripts
 
 ```bash
-# npm
-npm run build
+# Development
+bun run dev         # Start development server
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Production
+bun run build      # Build for production
+bun run preview    # Preview production build
 ```
 
-Locally preview production build:
+## 📦 Project Structure
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+```
+├── components/          # Reusable Vue components
+├── pages/              # Application pages
+├── public/             # Static files
+├── assets/
+│   ├── css/           # Global styles
+│   └── images/        # Project images
+├── composables/        # Shared composable functions
+└── content/           # Markdown content for projects
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 🎨 Customization
+
+Update your information in:
+
+- `content/projects.json`: Project showcase
+- `content/experience.json`: Work experience
+- `content/skills.json`: Technical skills
+
+## 🚀 Deployment
+
+The site is ready for deployment on Vercel:
+
+1. Connect your GitHub repository
+2. Vercel will automatically detect the Nuxt configuration
+3. Deploy!
+
+## 📞 Contact
+
+Let's connect:
+
+- Email: hello@philmataz.dev
+- LinkedIn: [Phillip Matambanadzo](www.linkedin.com/in/phillip-matambanadzo)
+- GitHub: [@PhilMataz](https://github.com/PhilMataz/)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
