@@ -10,8 +10,19 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/eslint": "latest",
+    "@nuxtjs/tailwindcss": "latest",
     "nuxt": "^3.13.2",
+    "nuxt-lucide-icons": "^1.0.5",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.6.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "eslint-plugin-vue": "^9.29.1",
+    "prettier": "^3.3.3"
   }
 }
