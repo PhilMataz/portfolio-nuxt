@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { tm } = useI18n();
+import type { Skills } from "~/types/cv";
+
+const { tm, t } = useI18n();
 
 type Experience = {
   title: string;
@@ -7,91 +9,96 @@ type Experience = {
   duration: string;
 };
 
-const techSkills = [
+const TECH_SKILLS: Skills[] = [
   {
-    name: "Javascript",
+    title: "Javascript",
     level: 9,
   },
   {
-    name: "Typescript",
+    title: "Typescript",
     level: 8,
   },
   {
-    name: "Vue",
+    title: "Vue",
     level: 9,
   },
   {
-    name: "React",
+    title: "React",
     level: 8,
   },
   {
-    name: "Node.js",
+    title: "Node.js",
     level: 9,
   },
   {
-    name: "HTML",
+    title: "HTML",
     level: 9,
   },
   {
-    name: "CSS",
+    title: "CSS",
     level: 9,
   },
   {
-    name: "UI/UX",
+    title: "UI/UX",
     level: 7,
   },
   {
-    name: "Git",
+    title: "Git",
     level: 9,
   },
   {
-    name: "Kubernetes",
+    title: "Kubernetes",
     level: 6,
   },
   {
-    name: "Docker",
+    title: "Docker",
     level: 6,
   },
   {
-    name: "PostgreSQL",
+    title: "PostgreSQL",
     level: 7,
   },
   {
-    name: "MongoDB",
+    title: "MongoDB",
     level: 7,
   },
   {
-    name: "DataDog",
+    title: "DataDog",
     level: 7,
   },
 ];
 
-const softSkills = [
+const SOFT_SKILLS = [
   {
-    name: "detailOriented",
+    title: "detailOriented",
     level: 9,
   },
   {
-    name: "adaptability",
+    title: "adaptability",
     level: 9,
   },
   {
-    name: "teamwork",
+    title: "teamwork",
     level: 10,
   },
   {
-    name: "analyticalSkill",
+    title: "analyticalSkill",
     level: 8,
   },
   {
-    name: "empathy",
+    title: "empathy",
     level: 9,
   },
   {
-    name: "perseverance",
+    title: "perseverance",
     level: 10,
   },
 ];
+
+const softSkills = SOFT_SKILLS.map((skill) => ({
+  ...skill,
+  title: t(`cv.softSkills.skills.${skill.title}`),
+}));
 
 const experiences = computed<Experience[]>(() =>
   tm("cv.experience.experiences"),
@@ -116,68 +123,15 @@ const experiences = computed<Experience[]>(() =>
           alt=""
         />
         <div class="flex h-full flex-col justify-between p-4 text-sm">
-          <!-- ADDRESS -->
           <CVContactInfo />
-          <!-- TECH SKILLS -->
-          <div>
-            <h4 class="mb-5 text-xl tracking-widest">
-              {{ $t("cv.techSkills").toUpperCase() }}
-            </h4>
-            <div
-              v-for="skill in techSkills"
-              :key="skill.name"
-              class="grid grid-cols-12 items-center"
-            >
-              <div class="col-span-5">{{ skill.name }}</div>
-              <div class="relative col-span-7 h-2 bg-zinc-500">
-                <div
-                  class="absolute inset-y-0 left-0 bg-zinc-50"
-                  :style="{ width: `${(skill.level / 10) * 100}%` }"
-                  aria-hidden="true"
-                ></div>
-                <span class="sr-only">
-                  {{
-                    $t("cv.skillLevelSR", {
-                      type: $t("cv.techSkills"),
-                      level: skill.level,
-                      max: 10,
-                    })
-                  }}
-                </span>
-              </div>
-            </div>
-          </div>
-          <!-- SOFT SKILLS -->
-          <div>
-            <h4 class="mb-5 text-xl font-light tracking-widest">
-              {{ $t("cv.softSkills.title").toUpperCase() }}
-            </h4>
-            <div
-              v-for="skill in softSkills"
-              :key="skill.name"
-              class="grid grid-cols-12 items-center"
-            >
-              <div class="col-span-5">
-                {{ $t(`cv.softSkills.skills.${skill.name}`) }}
-              </div>
-              <div class="relative col-span-7 h-2 bg-zinc-500">
-                <div
-                  class="absolute inset-y-0 left-0 bg-zinc-50"
-                  :style="{ width: `${(skill.level / 10) * 100}%` }"
-                  aria-hidden="true"
-                ></div>
-                <span class="sr-only">
-                  {{
-                    $t("cv.skillLevelSR", {
-                      type: $t("cv.softSkills.title"),
-                      level: skill.level,
-                      max: 10,
-                    })
-                  }}
-                </span>
-              </div>
-            </div>
-          </div>
+          <CVSkillSection
+            :title="$t('cv.techSkills')"
+            :skills="TECH_SKILLS"
+          />
+          <CVSkillSection
+            :title="$t('cv.softSkills.title')"
+            :skills="softSkills"
+          />
         </div>
       </CVSide>
       <div class="p-4">
