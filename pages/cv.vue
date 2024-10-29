@@ -117,20 +117,7 @@ const experiences = computed<Experience[]>(() =>
         />
         <div class="flex h-full flex-col justify-between p-4 text-sm">
           <!-- ADDRESS -->
-          <div>
-            <div class="inline-flex gap-2">
-              <LucideSmartphone />004915906562753
-            </div>
-            <div class="inline-flex gap-2">
-              <LucideMail />hello@philmataz.dev
-            </div>
-            <div class="inline-flex gap-2">
-              <LucideGlobe />https://www.philmataz.dev
-            </div>
-            <div class="inline-flex gap-2">
-              <LucideMap />Inselstr. 23, 45326 Essen
-            </div>
-          </div>
+          <CVContactInfo />
           <!-- TECH SKILLS -->
           <div>
             <h4 class="mb-5 text-xl tracking-widest">
