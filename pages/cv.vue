@@ -2,6 +2,11 @@
 const { setLocale } = useI18n();
 const selectedLanguage = ref("de");
 
+const languages = [
+  { id: "de", label: "Deutsch" },
+  { id: "en", label: "English" },
+];
+
 watchEffect(() => {
   setLocale(selectedLanguage.value);
 });
@@ -95,33 +100,43 @@ const softSkills = [
 
 <template>
   <div class="flex w-full flex-col items-center text-zinc-900">
-    <fieldset class="fixed bottom-8 right-8 print:hidden">
-      <legend>Select a language:</legend>
+    <div class="mx-auto w-full max-w-screen-sm p-4 print:hidden">
+      <div
+        role="tablist"
+        aria-label="Select a language"
+        class="relative flex border-b border-zinc-200"
+      >
+        <button
+          v-for="language in languages"
+          :id="`${language.id}-tab`"
+          :key="language.id"
+          role="tab"
+          :aria-selected="selectedLanguage === language.id"
+          :aria-controls="`${language.id}-panel`"
+          class="flex-1 px-4 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          :class="{
+            'border-b-2 border-blue-600 text-blue-600':
+              selectedLanguage === language.id,
+            'text-zinc-500 hover:border-zinc-300 hover:text-zinc-700':
+              selectedLanguage !== language.id,
+          }"
+          @click="selectedLanguage = language.id"
+        >
+          {{ language.label }}
+        </button>
 
-      <div>
-        <input
-          id="de"
-          v-model="selectedLanguage"
-          type="radio"
-          name="language"
-          value="de"
+        <!-- Sliding indicator - animates based on selected tab -->
+        <div
+          class="absolute bottom-0 h-0.5 bg-blue-600 transition-all duration-300"
+          :style="{
+            left: `${(languages.findIndex((language) => language.id === selectedLanguage) * 100) / languages.length}%`,
+            width: `${100 / languages.length}%`,
+          }"
         />
-        <label for="de">Deutsch</label>
       </div>
-
-      <div>
-        <input
-          id="en"
-          v-model="selectedLanguage"
-          type="radio"
-          name="language"
-          value="en"
-        />
-        <label for="en">English</label>
-      </div>
-    </fieldset>
+    </div>
     <div
-      class="grid h-[297mm] w-[210mm] grid-cols-[37%_1fr] border-x print:border-none"
+      class="grid h-[297mm] w-[210mm] grid-cols-[37%_1fr] rounded border border-zinc-200 print:border-none"
     >
       <div class="flex flex-col bg-zinc-900 text-slate-50">
         <img
