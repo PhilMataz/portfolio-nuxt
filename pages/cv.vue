@@ -109,7 +109,7 @@ const experiences = computed<Experience[]>(() =>
     <div
       class="grid h-[297mm] w-[210mm] grid-cols-[37%_1fr] rounded border border-zinc-200 print:border-none"
     >
-      <div class="flex flex-col bg-zinc-900 text-slate-50">
+      <CVSide>
         <img
           class="min-h-[100mm] object-cover mix-blend-screen"
           src="~/assets/images/Professional.BW.png"
@@ -192,7 +192,7 @@ const experiences = computed<Experience[]>(() =>
             </div>
           </div>
         </div>
-      </div>
+      </CVSide>
       <div class="p-4">
         <h1 class="flex flex-col font-heading leading-none">
           <span class="-ml-1 text-9xl"> Phillip </span>
