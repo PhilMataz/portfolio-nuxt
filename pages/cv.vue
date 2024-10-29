@@ -1,7 +1,12 @@
 <script setup lang="ts">
-<script setup lang="ts"></script>
+const { setLocale } = useI18n();
+const selectedLanguage = ref("de");
 
-const skills = [
+watchEffect(() => {
+  setLocale(selectedLanguage.value);
+});
+
+const techSkills = [
   {
     name: "Javascript",
     level: 9,
@@ -59,10 +64,62 @@ const skills = [
     level: 7,
   },
 ];
+
+const softSkills = [
+  {
+    name: "detailOriented",
+    level: 9,
+  },
+  {
+    name: "adaptability",
+    level: 9,
+  },
+  {
+    name: "teamwork",
+    level: 10,
+  },
+  {
+    name: "analyticalSkill",
+    level: 8,
+  },
+  {
+    name: "empathy",
+    level: 9,
+  },
+  {
+    name: "perseverance",
+    level: 10,
+  },
+];
 </script>
 
 <template>
   <div class="flex w-full flex-col items-center">
+    <fieldset class="fixed bottom-8 right-8">
+      <legend>Select a language:</legend>
+
+      <div>
+        <input
+          id="de"
+          v-model="selectedLanguage"
+          type="radio"
+          name="language"
+          value="de"
+        />
+        <label for="de">Deutsch</label>
+      </div>
+
+      <div>
+        <input
+          id="en"
+          v-model="selectedLanguage"
+          type="radio"
+          name="language"
+          value="en"
+        />
+        <label for="en">English</label>
+      </div>
+    </fieldset>
     <div class="flex h-[297mm] w-[210mm] border-x print:border-none">
       <div class="flex w-[78mm] flex-col bg-zinc-900 text-slate-50">
         <img
@@ -88,9 +145,11 @@ const skills = [
           </div>
           <!-- TECH SKILLS -->
           <div>
-            <h4 class="text-lg font-light tracking-widest">TECH SKILLS</h4>
+            <h4 class="text-lg font-light tracking-widest">
+              {{ $t("cv.techSkills") }}
+            </h4>
             <div
-              v-for="skill in skills"
+              v-for="skill in techSkills"
               :key="skill.name"
               class="grid grid-cols-12 items-center"
             >
@@ -103,7 +162,27 @@ const skills = [
               </div>
             </div>
           </div>
-  <div>Hello CV!</div>
+          <!-- TECH SKILLS -->
+          <div>
+            <h4 class="text-lg font-light tracking-widest">
+              {{ $t("cv.softSkills.title") }}
+            </h4>
+            <div
+              v-for="skill in softSkills"
+              :key="skill.name"
+              class="grid grid-cols-12 items-center"
+            >
+              <div class="col-span-5">
+                {{ $t(`cv.softSkills.skills.${skill.name}`) }}
+              </div>
+              <div class="relative col-span-7 h-2 bg-zinc-500">
+                <div
+                  class="absolute inset-y-0 left-0 bg-zinc-50"
+                  :style="{ width: `${(skill.level / 10) * 100}%` }"
+                ></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div>Phillip Matambanadzo</div>

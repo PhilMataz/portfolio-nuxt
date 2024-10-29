@@ -4,9 +4,36 @@ export default defineI18nConfig(() => ({
   messages: {
     en: {
       welcome: "Welcome",
+      cv: {
+        techSkills: "Tech Skills",
+        softSkills: {
+          title: "Soft Skills",
+          skills: {
+            detailOriented: "Detail-oriented",
+            adaptability: "Adaptability",
+            teamwork: "Teamwork",
+            analyticalSkill: "Analytical Skill",
+            empathy: "Empathy",
+            perseverance: "Perseverance",
+          },
+        },
+      },
     },
-    fr: {
-      welcome: "Bienvenue",
+    de: {
+      cv: {
+        techSkills: "Tech Skills",
+        softSkills: {
+          title: "Soft Skills",
+          skills: {
+            detailOriented: "Detail-oriented",
+            adaptability: "Adaptability",
+            teamwork: "Teamwork",
+            analyticalSkill: "Analytical Skill",
+            empathy: "Empathie",
+            perseverance: "Beständigkeit",
+          },
+        },
+      },
     },
   },
 }));
