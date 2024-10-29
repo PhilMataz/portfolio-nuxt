@@ -1,6 +1,12 @@
 <script setup lang="ts">
-const { setLocale } = useI18n();
+const { setLocale, tm } = useI18n();
 const selectedLanguage = ref("de");
+
+type Experience = {
+  title: string;
+  location: string;
+  duration: string;
+};
 
 const languages = [
   { id: "de", label: "Deutsch" },
@@ -96,6 +102,10 @@ const softSkills = [
     level: 10,
   },
 ];
+
+const experiences = computed<Experience[]>(() =>
+  tm("cv.experience.experiences"),
+);
 </script>
 
 <template>
@@ -146,7 +156,7 @@ const softSkills = [
           src="~/assets/images/Professional.BW.png"
           alt=""
         />
-        <div class="flex h-full flex-col gap-12 p-4 text-sm">
+        <div class="flex h-full flex-col justify-between p-4 text-sm">
           <!-- ADDRESS -->
           <div>
             <div class="inline-flex gap-2">
@@ -164,7 +174,7 @@ const softSkills = [
           </div>
           <!-- TECH SKILLS -->
           <div>
-            <h4 class="text-xl tracking-widest">
+            <h4 class="mb-5 text-xl tracking-widest">
               {{ $t("cv.techSkills").toUpperCase() }}
             </h4>
             <div
@@ -193,7 +203,7 @@ const softSkills = [
           </div>
           <!-- SOFT SKILLS -->
           <div>
-            <h4 class="text-xl font-light tracking-widest">
+            <h4 class="mb-5 text-xl font-light tracking-widest">
               {{ $t("cv.softSkills.title").toUpperCase() }}
             </h4>
             <div
@@ -233,12 +243,31 @@ const softSkills = [
           {{ $t("cv.title").toUpperCase() }}
         </h3>
 
-        <h3 class="ml-[2px] mt-20 text-xl tracking-widest text-zinc-500">
+        <!-- SUMMARY -->
+        <h3 class="mb-6 ml-[2px] mt-14 text-xl tracking-widest text-zinc-500">
           {{ $t("cv.summary.heading").toUpperCase() }}
         </h3>
-        <p class="mt-6 text-zinc-600">
+        <p class="text-zinc-600">
           {{ $t("cv.summary.text") }}
         </p>
+
+        <!-- WORK EXPERIENCE -->
+        <h3 class="mb-6 ml-[2px] mt-14 text-xl tracking-widest text-zinc-500">
+          {{ $t("cv.experience.heading").toUpperCase() }}
+        </h3>
+        <div class="flex flex-col gap-6">
+          <div
+            v-for="(experience, index) in experiences"
+            :key="index"
+            class="flex flex-col gap-1"
+          >
+            <h4 class="font-medium">
+              {{ experience.title.toUpperCase() }}
+            </h4>
+            <span class="text-sm">{{ experience.location }}</span>
+            <span class="text-sm">{{ experience.duration }}</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="h-[297mm] w-[210mm] bg-red-500">Test</div>

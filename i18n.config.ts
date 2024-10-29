@@ -3,7 +3,6 @@ export default defineI18nConfig(() => ({
   locale: "en",
   messages: {
     en: {
-      welcome: "Welcome",
       cv: {
         title: "Senior Software Engineer",
         summary: {
@@ -16,6 +15,31 @@ export default defineI18nConfig(() => ({
             pipelines, and maintaining production systems using modern monitoring 
             solutions. Strong focus on code quality through comprehensive 
             testing strategies and best practices.`,
+        },
+        experience: {
+          heading: "Work Experience",
+          experiences: [
+            {
+              title: "Freelance Software Engineer",
+              location: "Essen",
+              duration: "01/2022 - today",
+            },
+            {
+              title: "Software Engineer",
+              location: "Ruhrkraft GmbH - Essen",
+              duration: "06/2021 - 12/2021",
+            },
+            {
+              title: "Software Engineer",
+              location: "Westend Druckereibetriebe GmbH - Essen",
+              duration: "01/2018 - 06/2021",
+            },
+            {
+              title: "Student Assistant",
+              location: "Hochschule Düsseldorf",
+              duration: "06/2021 - 12/2027",
+            },
+          ],
         },
         techSkills: "Tech Skills",
         softSkills: {
@@ -34,7 +58,7 @@ export default defineI18nConfig(() => ({
     },
     de: {
       cv: {
-        title: "Senior Software Engineer",
+        title: "Senior Software Ingenieur",
         summary: {
           heading: "Zusammenfassung",
           text: `Senior Full-Stack Entwickler mit umfangreicher Erfahrung in der Entwicklung 
@@ -44,6 +68,31 @@ export default defineI18nConfig(() => ({
             in der Bereitstellung hochperformanter Anwendungen, Implementierung robuster 
             CI/CD-Pipelines und Wartung von Produktionssystemen mit modernen Monitoring-Lösungen. 
             Starker Fokus auf Code-Qualität durch umfassende Teststrategien und Best Practices.`,
+        },
+        experience: {
+          heading: "Arbeitserfahrung",
+          experiences: [
+            {
+              title: "Freiberuflicher Software Ingenieur",
+              location: "Essen",
+              duration: "01/2022 - heute",
+            },
+            {
+              title: "Software Ingenieur",
+              location: "Ruhrkraft GmbH - Essen",
+              duration: "06/2021 - 12/2021",
+            },
+            {
+              title: "Software Ingenieur",
+              location: "Westend Druckereibetriebe GmbH - Essen",
+              duration: "01/2018 - 06/2021",
+            },
+            {
+              title: "Werkstudent",
+              location: "Hochschule Düsseldorf",
+              duration: "06/2021 - 12/2027",
+            },
+          ],
         },
         techSkills: "Tech Skills",
         softSkills: {
