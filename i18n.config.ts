@@ -17,11 +17,12 @@ export default defineI18nConfig(() => ({
             perseverance: "Perseverance",
           },
         },
+        skillLevelSR: "{type} level: {level} out of {max}",
       },
     },
     de: {
       cv: {
-        techSkills: "Tech Skills",
+        techSkills: "Technische Fähigkeiten",
         softSkills: {
           title: "Soft Skills",
           skills: {
@@ -33,6 +34,7 @@ export default defineI18nConfig(() => ({
             perseverance: "Beständigkeit",
           },
         },
+        skillLevelSR: "{type} Niveau: {level} von {max}",
       },
     },
   },

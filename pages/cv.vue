@@ -158,11 +158,21 @@ const softSkills = [
                 <div
                   class="absolute inset-y-0 left-0 bg-zinc-50"
                   :style="{ width: `${(skill.level / 10) * 100}%` }"
+                  aria-hidden="true"
                 ></div>
+                <span class="sr-only">
+                  {{
+                    $t("cv.skillLevelSR", {
+                      type: $t("cv.techSkills"),
+                      level: skill.level,
+                      max: 10,
+                    })
+                  }}
+                </span>
               </div>
             </div>
           </div>
-          <!-- TECH SKILLS -->
+          <!-- SOFT SKILLS -->
           <div>
             <h4 class="text-lg font-light tracking-widest">
               {{ $t("cv.softSkills.title") }}
@@ -179,7 +189,17 @@ const softSkills = [
                 <div
                   class="absolute inset-y-0 left-0 bg-zinc-50"
                   :style="{ width: `${(skill.level / 10) * 100}%` }"
+                  aria-hidden="true"
                 ></div>
+                <span class="sr-only">
+                  {{
+                    $t("cv.skillLevelSR", {
+                      type: $t("cv.softSkills"),
+                      level: skill.level,
+                      max: 10,
+                    })
+                  }}
+                </span>
               </div>
             </div>
           </div>
