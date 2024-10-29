@@ -99,7 +99,9 @@ const softSkills = [
 </script>
 
 <template>
-  <div class="flex w-full flex-col items-center text-zinc-900">
+  <div
+    class="flex w-full flex-col items-center font-body font-light text-zinc-900"
+  >
     <div class="mx-auto w-full max-w-screen-sm p-4 print:hidden">
       <div
         role="tablist"
@@ -144,7 +146,7 @@ const softSkills = [
           src="~/assets/images/Professional.BW.png"
           alt=""
         />
-        <div class="flex h-full flex-col gap-12 p-4 text-sm font-thin">
+        <div class="flex h-full flex-col gap-12 p-4 text-sm">
           <!-- ADDRESS -->
           <div>
             <div class="inline-flex gap-2">
@@ -162,7 +164,7 @@ const softSkills = [
           </div>
           <!-- TECH SKILLS -->
           <div>
-            <h4 class="text-lg font-light tracking-widest">
+            <h4 class="text-xl tracking-widest">
               {{ $t("cv.techSkills").toUpperCase() }}
             </h4>
             <div
@@ -191,7 +193,7 @@ const softSkills = [
           </div>
           <!-- SOFT SKILLS -->
           <div>
-            <h4 class="text-lg font-light tracking-widest">
+            <h4 class="text-xl font-light tracking-widest">
               {{ $t("cv.softSkills.title").toUpperCase() }}
             </h4>
             <div
@@ -223,18 +225,18 @@ const softSkills = [
         </div>
       </div>
       <div class="p-4">
-        <h1 class="flex flex-col leading-none">
-          <span class="-ml-1 text-9xl font-extralight"> Phillip </span>
+        <h1 class="flex flex-col font-heading leading-none">
+          <span class="-ml-1 text-9xl"> Phillip </span>
           <span class="-mt-4 text-6xl">Matambanadzo</span>
         </h1>
-        <h3 class="ml-[2px] text-xl font-thin text-zinc-500">
+        <h3 class="ml-[2px] text-xl tracking-widest text-zinc-500">
           {{ $t("cv.title").toUpperCase() }}
         </h3>
 
-        <h3 class="ml-[2px] mt-20 text-xl font-thin text-zinc-500">
+        <h3 class="ml-[2px] mt-20 text-xl tracking-widest text-zinc-500">
           {{ $t("cv.summary.heading").toUpperCase() }}
         </h3>
-        <p class="mt-6 font-light text-zinc-600">
+        <p class="mt-6 text-zinc-600">
           {{ $t("cv.summary.text") }}
         </p>
       </div>
