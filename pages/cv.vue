@@ -94,8 +94,8 @@ const softSkills = [
 </script>
 
 <template>
-  <div class="flex w-full flex-col items-center">
-    <fieldset class="fixed bottom-8 right-8">
+  <div class="flex w-full flex-col items-center text-zinc-900">
+    <fieldset class="fixed bottom-8 right-8 print:hidden">
       <legend>Select a language:</legend>
 
       <div>
@@ -120,8 +120,10 @@ const softSkills = [
         <label for="en">English</label>
       </div>
     </fieldset>
-    <div class="flex h-[297mm] w-[210mm] border-x print:border-none">
-      <div class="flex w-[78mm] flex-col bg-zinc-900 text-slate-50">
+    <div
+      class="grid h-[297mm] w-[210mm] grid-cols-[37%_1fr] border-x print:border-none"
+    >
+      <div class="flex flex-col bg-zinc-900 text-slate-50">
         <img
           class="min-h-[100mm] object-cover mix-blend-screen"
           src="~/assets/images/Professional.BW.png"
@@ -146,7 +148,7 @@ const softSkills = [
           <!-- TECH SKILLS -->
           <div>
             <h4 class="text-lg font-light tracking-widest">
-              {{ $t("cv.techSkills") }}
+              {{ $t("cv.techSkills").toUpperCase() }}
             </h4>
             <div
               v-for="skill in techSkills"
@@ -175,7 +177,7 @@ const softSkills = [
           <!-- SOFT SKILLS -->
           <div>
             <h4 class="text-lg font-light tracking-widest">
-              {{ $t("cv.softSkills.title") }}
+              {{ $t("cv.softSkills.title").toUpperCase() }}
             </h4>
             <div
               v-for="skill in softSkills"
@@ -194,7 +196,7 @@ const softSkills = [
                 <span class="sr-only">
                   {{
                     $t("cv.skillLevelSR", {
-                      type: $t("cv.softSkills"),
+                      type: $t("cv.softSkills.title"),
                       level: skill.level,
                       max: 10,
                     })
@@ -205,7 +207,22 @@ const softSkills = [
           </div>
         </div>
       </div>
-      <div>Phillip Matambanadzo</div>
+      <div class="p-4">
+        <h1 class="flex flex-col leading-none">
+          <span class="-ml-1 text-9xl font-extralight"> Phillip </span>
+          <span class="-mt-4 text-6xl">Matambanadzo</span>
+        </h1>
+        <h3 class="ml-[2px] text-xl font-thin text-zinc-500">
+          {{ $t("cv.title").toUpperCase() }}
+        </h3>
+
+        <h3 class="ml-[2px] mt-20 text-xl font-thin text-zinc-500">
+          {{ $t("cv.summary.heading").toUpperCase() }}
+        </h3>
+        <p class="mt-6 font-light text-zinc-600">
+          {{ $t("cv.summary.text") }}
+        </p>
+      </div>
     </div>
     <div class="h-[297mm] w-[210mm] bg-red-500">Test</div>
   </div>
