@@ -68,38 +68,6 @@ const TECH_SKILLS: Skills[] = [
   },
 ];
 
-const SOFT_SKILLS = [
-  {
-    title: "detailOriented",
-    level: 9,
-  },
-  {
-    title: "adaptability",
-    level: 9,
-  },
-  {
-    title: "teamwork",
-    level: 10,
-  },
-  {
-    title: "analyticalSkill",
-    level: 8,
-  },
-  {
-    title: "empathy",
-    level: 9,
-  },
-  {
-    title: "perseverance",
-    level: 10,
-  },
-];
-
-const softSkills = SOFT_SKILLS.map((skill) => ({
-  ...skill,
-  title: t(`cv.softSkills.skills.${skill.title}`),
-}));
-
 const experiences = computed<Experience[]>(() =>
   tm("cv.experience.experiences"),
 );
