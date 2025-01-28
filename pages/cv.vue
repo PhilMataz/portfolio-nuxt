@@ -128,10 +128,6 @@ const experiences = computed<Experience[]>(() =>
             :title="$t('cv.techSkills')"
             :skills="TECH_SKILLS"
           />
-          <CVSkillSection
-            :title="$t('cv.softSkills.title')"
-            :skills="softSkills"
-          />
         </div>
       </CVSide>
       <div class="p-4">
