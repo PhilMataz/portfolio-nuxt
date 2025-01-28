@@ -90,12 +90,10 @@ const experiences = computed<Experience[]>(() =>
           src="~/assets/images/Professional.BW.png"
           alt=""
         />
-        <div class="flex h-full flex-col justify-between p-4 text-sm">
+        <div class="flex h-full flex-col gap-8 p-4 text-sm">
           <CVContactInfo />
-          <CVSkillSection
-            :title="$t('cv.techSkills')"
-            :skills="TECH_SKILLS"
-          />
+          <CVSkillSection />
+          <CVReferencesSection />
         </div>
       </CVSide>
       <div class="p-4">

@@ -54,6 +54,10 @@ export default defineI18nConfig(() => ({
           },
         },
         skillLevelSR: "{type} level: {level} out of {max}",
+        references: "References",
+      },
+      common: {
+        seniorSoftwareArchitect: "Senior Software Architect",
       },
     },
     de: {
@@ -107,6 +111,10 @@ export default defineI18nConfig(() => ({
           },
         },
         skillLevelSR: "{type} Niveau: {level} von {max}",
+        references: "Referenzen",
+      },
+      common: {
+        seniorSoftwareArchitect: "Senior Software Architekt",
       },
     },
   },
