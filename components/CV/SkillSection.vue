@@ -24,8 +24,11 @@ const SKILLS = [
 
 <template>
   <div>
-    <CVSectionHeader title="cv.techSkills" />
-    <div>
+    <CVSectionHeader
+      title="cv.techSkills"
+      class="-ml-px"
+    />
+    <div class="text-sm">
       {{ SKILLS.join(", ") }}
     </div>
   </div>

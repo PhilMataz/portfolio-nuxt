@@ -382,7 +382,7 @@ export default defineI18nConfig(() => ({
           },
           levels: {
             c2: "Muttersprachlich (C2)",
-            c1: "Verhandlungssicher(C1)",
+            c1: "Verhandlungssicher (C1)",
             b1: "Mittelstufe (B1)",
           },
         },

@@ -27,25 +27,23 @@ const projectTuples = computed(() => {
       class="mx-auto w-full max-w-screen-sm p-4 print:hidden"
     />
 
-    <div
-      class="grid h-[297mm] w-[210mm] grid-cols-[35%_1fr] rounded border border-zinc-200 print:border-none"
-    >
+    <CVPageContainer>
       <CVSide>
         <img
           class="min-h-[100mm] object-cover mix-blend-screen"
           src="~/assets/images/Professional.BW.png"
           alt=""
         />
-        <div class="flex h-full flex-col gap-8 p-4 text-sm">
+        <div class="flex h-full flex-col gap-8 p-6 text-sm">
           <CVContactInfo />
-          <CVSkillSection />
-          <CVLanguageSection class="mt-auto" />
+          <CVSkillSection class="mt-auto" />
+          <CVLanguageSection />
         </div>
       </CVSide>
-      <div class="p-4 pr-12">
+      <div class="p-6">
         <div class="mb-14">
           <h1 class="flex flex-col font-heading leading-none">
-            <span class="-ml-1 text-9xl"> Phillip </span>
+            <span class="-ml-1 -mt-2 text-9xl"> Phillip </span>
             <span class="-mt-4 text-6xl">Matambanadzo</span>
           </h1>
           <CVSectionHeader
@@ -84,7 +82,7 @@ const projectTuples = computed(() => {
           </div>
         </div>
       </div>
-    </div>
+    </CVPageContainer>
     <CVProjectPage
       v-for="(projects, index) in projectTuples"
       :key="index"

@@ -19,7 +19,10 @@ const REFERENCES = [
 
 <template>
   <div>
-    <CVSectionHeader title="cv.references" />
+    <CVSectionHeader
+      title="cv.references"
+      class="-ml-px"
+    />
     <div class="flex flex-col gap-6">
       <div
         v-for="reference in REFERENCES"

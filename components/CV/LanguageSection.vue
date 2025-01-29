@@ -8,7 +8,10 @@ const LANGUAGES = {
 
 <template>
   <div>
-    <CVSectionHeader title="cv.languages.heading" />
+    <CVSectionHeader
+      title="cv.languages.heading"
+      class="-ml-px"
+    />
     <div
       v-for="(level, language) in LANGUAGES"
       :key="language"
