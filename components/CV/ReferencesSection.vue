@@ -18,7 +18,7 @@ const REFERENCES = [
 </script>
 
 <template>
-  <div class="mt-auto">
+  <div>
     <CVSectionHeader title="cv.references" />
     <div class="flex flex-col gap-6">
       <div

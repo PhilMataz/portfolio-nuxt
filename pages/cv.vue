@@ -39,7 +39,7 @@ const projectTuples = computed(() => {
         <div class="flex h-full flex-col gap-8 p-4 text-sm">
           <CVContactInfo />
           <CVSkillSection />
-          <CVReferencesSection />
+          <CVLanguageSection class="mt-auto" />
         </div>
       </CVSide>
       <div class="p-4 pr-12">

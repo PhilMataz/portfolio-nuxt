@@ -179,6 +179,19 @@ export default defineI18nConfig(() => ({
           ],
         },
         references: "References",
+        languages: {
+          heading: "Languages",
+          languages: {
+            english: "English",
+            german: "German",
+            portuguese: "Portuguese",
+          },
+          levels: {
+            c2: "Native Speaker (C2)",
+            c1: "Business Fluent (C1)",
+            b1: "Intermediate (B1)",
+          },
+        },
       },
       common: {
         seniorSoftwareArchitect: "Senior Software Architect",
@@ -360,6 +373,19 @@ export default defineI18nConfig(() => ({
           ],
         },
         references: "Referenzen",
+        languages: {
+          heading: "Sprachen",
+          languages: {
+            english: "Englisch",
+            german: "Deutsch",
+            portuguese: "Portugiesisch",
+          },
+          levels: {
+            c2: "Muttersprachlich (C2)",
+            c1: "Verhandlungssicher(C1)",
+            b1: "Mittelstufe (B1)",
+          },
+        },
       },
       common: {
         seniorSoftwareArchitect: "Senior Software Architekt",

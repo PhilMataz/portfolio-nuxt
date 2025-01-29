@@ -14,7 +14,8 @@ defineProps<Props>();
     class="grid h-[297mm] w-[210mm] grid-cols-[35%_1fr] rounded border border-zinc-200 print:border-none"
   >
     <CVSide
-      ><div class="flex h-full flex-col justify-between p-4 text-sm"></div
+      ><div class="flex h-full flex-col justify-between p-4 pt-12 text-sm">
+        <CVReferencesSection v-if="hasHeader" /></div
     ></CVSide>
     <div class="p-4 pr-12 pt-12">
       <CVSectionHeader
