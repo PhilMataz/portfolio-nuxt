@@ -17,12 +17,12 @@ defineProps<Props>();
       ><div class="flex h-full flex-col justify-between p-4 text-sm"></div
     ></CVSide>
     <div class="p-4 pr-12 pt-12">
-      <h3
+      <CVSectionHeader
         v-if="hasHeader"
-        class="mb-6 ml-[2px] text-xl tracking-widest text-zinc-500"
-      >
-        {{ $t("cv.projects.heading").toUpperCase() }}
-      </h3>
+        title="cv.projects.heading"
+        class="text-zinc-500"
+      />
+
       <div class="flex flex-col gap-10">
         <div
           v-for="(project, index) in projects"

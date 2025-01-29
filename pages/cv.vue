@@ -43,26 +43,33 @@ const projectTuples = computed(() => {
         </div>
       </CVSide>
       <div class="p-4 pr-12">
-        <h1 class="flex flex-col font-heading leading-none">
-          <span class="-ml-1 text-9xl"> Phillip </span>
-          <span class="-mt-4 text-6xl">Matambanadzo</span>
-        </h1>
-        <h3 class="ml-[2px] text-xl tracking-widest text-zinc-500">
-          {{ $t("cv.title").toUpperCase() }}
-        </h3>
+        <div class="mb-14">
+          <h1 class="flex flex-col font-heading leading-none">
+            <span class="-ml-1 text-9xl"> Phillip </span>
+            <span class="-mt-4 text-6xl">Matambanadzo</span>
+          </h1>
+          <CVSectionHeader
+            title="cv.title"
+            class="ml-[2px] text-zinc-500"
+          />
+        </div>
 
         <!-- SUMMARY -->
-        <h3 class="mb-6 ml-[2px] mt-14 text-xl tracking-widest text-zinc-500">
-          {{ $t("cv.summary.heading").toUpperCase() }}
-        </h3>
-        <p class="text-zinc-600">
-          {{ $t("cv.summary.text") }}
-        </p>
+        <div class="mb-14">
+          <CVSectionHeader
+            title="cv.summary.heading"
+            class="text-zinc-500"
+          />
+          <p class="text-zinc-600">
+            {{ $t("cv.summary.text") }}
+          </p>
+        </div>
 
         <!-- WORK EXPERIENCE -->
-        <h3 class="mb-6 ml-[2px] mt-14 text-xl tracking-widest text-zinc-500">
-          {{ $t("cv.experience.heading").toUpperCase() }}
-        </h3>
+        <CVSectionHeader
+          title="cv.experience.heading"
+          class="text-zinc-500"
+        />
         <div class="flex flex-col gap-6">
           <div
             v-for="(experience, index) in experiences"

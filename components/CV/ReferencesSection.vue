@@ -19,9 +19,7 @@ const REFERENCES = [
 
 <template>
   <div class="mt-auto">
-    <h4 class="mb-5 text-xl tracking-widest">
-      {{ $t("cv.references").toUpperCase() }}
-    </h4>
+    <CVSectionHeader title="cv.references" />
     <div class="flex flex-col gap-6">
       <div
         v-for="reference in REFERENCES"

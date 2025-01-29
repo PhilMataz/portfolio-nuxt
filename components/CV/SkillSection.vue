@@ -24,9 +24,7 @@ const SKILLS = [
 
 <template>
   <div>
-    <h4 class="mb-5 text-xl tracking-widest">
-      {{ $t("cv.techSkills").toUpperCase() }}
-    </h4>
+    <CVSectionHeader title="cv.techSkills" />
     <div>
       {{ SKILLS.join(", ") }}
     </div>
