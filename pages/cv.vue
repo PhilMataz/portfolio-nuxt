@@ -1,76 +1,22 @@
 <script setup lang="ts">
-import type { Skills } from "~/types/cv";
+import type { Experience, Project } from "~/types/cv";
 
-const { tm, t } = useI18n();
-
-type Experience = {
-  title: string;
-  location: string;
-  duration: string;
-};
-
-const TECH_SKILLS: Skills[] = [
-  {
-    title: "Javascript",
-    level: 9,
-  },
-  {
-    title: "Typescript",
-    level: 8,
-  },
-  {
-    title: "Vue",
-    level: 9,
-  },
-  {
-    title: "React",
-    level: 8,
-  },
-  {
-    title: "Node.js",
-    level: 9,
-  },
-  {
-    title: "HTML",
-    level: 9,
-  },
-  {
-    title: "CSS",
-    level: 9,
-  },
-  {
-    title: "UI/UX",
-    level: 7,
-  },
-  {
-    title: "Git",
-    level: 9,
-  },
-  {
-    title: "Kubernetes",
-    level: 6,
-  },
-  {
-    title: "Docker",
-    level: 6,
-  },
-  {
-    title: "PostgreSQL",
-    level: 7,
-  },
-  {
-    title: "MongoDB",
-    level: 7,
-  },
-  {
-    title: "DataDog",
-    level: 7,
-  },
-];
+const { tm } = useI18n();
 
 const experiences = computed<Experience[]>(() =>
   tm("cv.experience.experiences"),
 );
+
+const projectTuples = computed(() => {
+  const result: Project[][] = [];
+  const projects: Project[] = tm("cv.projects.projects");
+
+  for (let i = 0; i < projects.length; i += 2) {
+    result.push(projects.slice(i, i + 2));
+  }
+
+  return result;
+});
 </script>
 
 <template>
@@ -82,7 +28,7 @@ const experiences = computed<Experience[]>(() =>
     />
 
     <div
-      class="grid h-[297mm] w-[210mm] grid-cols-[37%_1fr] rounded border border-zinc-200 print:border-none"
+      class="grid h-[297mm] w-[210mm] grid-cols-[35%_1fr] rounded border border-zinc-200 print:border-none"
     >
       <CVSide>
         <img
@@ -96,7 +42,7 @@ const experiences = computed<Experience[]>(() =>
           <CVReferencesSection />
         </div>
       </CVSide>
-      <div class="p-4">
+      <div class="p-4 pr-12">
         <h1 class="flex flex-col font-heading leading-none">
           <span class="-ml-1 text-9xl"> Phillip </span>
           <span class="-mt-4 text-6xl">Matambanadzo</span>
@@ -132,6 +78,11 @@ const experiences = computed<Experience[]>(() =>
         </div>
       </div>
     </div>
-    <div class="h-[297mm] w-[210mm] bg-red-500">Test</div>
+    <CVProjectPage
+      v-for="(projects, index) in projectTuples"
+      :key="index"
+      :projects="projects"
+      :has-header="index === 0"
+    />
   </div>
 </template>
