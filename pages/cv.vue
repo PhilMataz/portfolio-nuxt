@@ -20,9 +20,7 @@ const projectTuples = computed(() => {
 </script>
 
 <template>
-  <div
-    class="flex w-full flex-col items-center font-body font-light text-zinc-900"
-  >
+  <div class="flex w-full flex-col items-center font-light text-zinc-900">
     <CVLanguageSelector
       class="mx-auto w-full max-w-screen-sm p-4 print:hidden"
     />
@@ -42,7 +40,7 @@ const projectTuples = computed(() => {
       </CVSide>
       <div class="p-6">
         <div class="mb-14">
-          <h1 class="flex flex-col font-heading leading-none">
+          <h1 class="font-display flex flex-col leading-none">
             <span class="-ml-1 -mt-2 text-9xl"> Phillip </span>
             <span class="-mt-4 text-6xl">Matambanadzo</span>
           </h1>
