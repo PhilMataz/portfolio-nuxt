@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Experience, Project } from "~/types/cv";
 
+useHead({
+  title: "CV - Phillip Matambanadzo",
+});
+
 const { tm } = useI18n();
 
 const experiences = computed<Experience[]>(() =>
@@ -20,7 +24,7 @@ const projectTuples = computed(() => {
 </script>
 
 <template>
-  <div class="flex w-full flex-col items-center font-light text-zinc-900">
+  <div class="flex w-full flex-col items-center font-light text-blue-grey-900">
     <CVLanguageSelector
       class="mx-auto w-full max-w-screen-sm p-4 print:hidden"
     />
@@ -46,7 +50,7 @@ const projectTuples = computed(() => {
           </h1>
           <CVSectionHeader
             title="cv.title"
-            class="ml-[2px] text-zinc-500"
+            class="ml-[2px] text-blue-grey-500"
           />
         </div>
 
@@ -54,9 +58,9 @@ const projectTuples = computed(() => {
         <div class="mb-14">
           <CVSectionHeader
             title="cv.summary.heading"
-            class="text-zinc-500"
+            class="text-red-vivid-300"
           />
-          <p class="text-zinc-600">
+          <p>
             {{ $t("cv.summary.text") }}
           </p>
         </div>
@@ -64,7 +68,7 @@ const projectTuples = computed(() => {
         <!-- WORK EXPERIENCE -->
         <CVSectionHeader
           title="cv.experience.heading"
-          class="text-zinc-500"
+          class="text-red-vivid-300"
         />
         <div class="flex flex-col gap-6">
           <div

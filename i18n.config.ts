@@ -8,8 +8,8 @@ export default defineI18nConfig(() => ({
         summary: {
           heading: "Summary",
           text: `Senior Full-Stack Engineer with extensive experience in building scalable
-            web applications using modern JavaScript frameworks and cloud technologies.
-            Skilled in both frontend (Vue.js, React) and backend (Node.js) development,
+            web applications using modern JavaScript frameworks (Vue.js, React, Angular) and cloud technologies.
+            Skilled in both frontend and backend development,
             with expertise in DevOps practices and cloud infrastructure. Proven track
             record of delivering high-performance applications, implementing robust CI/CD
             pipelines, and maintaining production systems using modern monitoring
@@ -49,16 +49,42 @@ export default defineI18nConfig(() => ({
           projects: [
             {
               title: "Senior Fullstack Engineer",
+              company: "INDTACT GMBH",
+              duration: "10/2024 - 12/2024 (2 months)",
+              technologies: [
+                "Typescript",
+                "Vue",
+                "Nuxt",
+                "Tailwind CSS",
+                "Node.js",
+                "WebSocket",
+                "Drizzle ORM",
+                "PostgreSQL",
+                "Zod",
+              ],
+              description:
+                "I developed the frontend and BFF (Backend-for-Frontend) for a quality assurance system used in automotive manufacturing. The system interfaces with specialized Bluetooth devices (SmartClicks) to collect sound signatures and ensure correct connector installations. My responsibilities included:",
+              bullets: [
+                "Architecting a domain-driven frontend structure using Nuxt and TypeScript",
+                "Implementing real-time WebSocket connections for data collection and live monitoring",
+                "Building a device management dashboard for gateway and SmartClick configuration",
+                "Creating data collection interfaces for sound signature recording and labeling",
+                "Designing and implementing RESTful APIs using Drizzle ORM and PostgreSQL",
+                "Developing real-time visualizations for connection quality feedback",
+              ],
+            },
+            {
+              title: "Senior Fullstack Engineer",
               company: "SMG",
               duration: "11/2023 - 12/2024 (1 year, 1 months)",
               technologies: [
-                "Vue",
                 "Typescript",
+                "Vue",
                 "Vite",
                 "Vitest",
                 "Node.js",
                 "AWS (Api Gateway, Cloudfront, Lambda, SQS, SNS, CDK)",
-                "DataDog",
+                "Datadog",
                 "Git",
               ],
               description:
@@ -76,12 +102,15 @@ export default defineI18nConfig(() => ({
               duration: "12/2021 - 09/2023 (1 year, 10 months)",
               technologies: [
                 "Vue",
+                "Nuxt",
+                "Angular",
                 "TypeScript",
                 "Pinia",
                 "VueX",
                 "Vite",
-                "Jest",
                 "Vitest",
+                "Tailwind CSS",
+                "Jest",
                 "GitHub",
                 "Kubernetes",
                 "Jenkins",
@@ -94,6 +123,7 @@ export default defineI18nConfig(() => ({
                 "Defining feature specifications and coordinating with external teams",
                 "Leading a team of 5-8 developers",
                 "Driving the upgrade from Vue 2 to Vue 3",
+                "Maintaining and supporting legacy Angular code base",
                 "Migrating the test suite from Jest to Vitest",
                 "Implementing TypeScript",
                 "Building new features and DevOps pipelines",
@@ -106,10 +136,11 @@ export default defineI18nConfig(() => ({
               company: "Auteon",
               duration: "10/2021 - 04/2022 (6 months)",
               technologies: [
-                "Vue",
                 "TypeScript",
-                "Google Cloud Functions",
+                "Vue",
+                "Webpack",
                 "Node.js",
+                "Google Cloud Functions",
                 "Cheerio",
                 "Puppeteer",
                 "Postman",
@@ -133,10 +164,10 @@ export default defineI18nConfig(() => ({
               company: "Ruhrkraft GmbH",
               duration: "09/2020 - 09/2021 (1 year)",
               technologies: [
-                "Vue",
-                "React",
                 "TypeScript",
+                "Vue",
                 "VueX",
+                "React",
                 "Meteor",
                 "Node.js",
                 "Jest",
@@ -156,15 +187,17 @@ export default defineI18nConfig(() => ({
               company: "Westend Druckereibetriebe",
               duration: "01/2018 - 07/2021 (3 years, 6 months)",
               technologies: [
+                "TypeScript",
+                "Vue",
+                "Angular",
+                "Tailwind CSS",
                 "Meteor",
                 "Node.js",
-                "Vue",
                 "React",
                 "VueX",
                 "Cypress",
                 "Jest",
                 "Docker",
-                "Tailwind CSS",
               ],
               description:
                 "At this major printing company, I was tasked with improving their digital processes. I designed and developed an order placement application that served as the main interface between the company and customers. I also created comprehensive end-to-end and unit test suites to ensure the app was reliable and bug-free. My key activities included:",
@@ -192,6 +225,11 @@ export default defineI18nConfig(() => ({
             b1: "Intermediate (B1)",
           },
         },
+        education: {
+          heading: "Education",
+          mediaIT: "Media IT",
+          civilEngineering: "Civil Engineering",
+        },
       },
       common: {
         seniorSoftwareArchitect: "Senior Software Architect",
@@ -202,13 +240,7 @@ export default defineI18nConfig(() => ({
         title: "Senior Software Ingenieur",
         summary: {
           heading: "Zusammenfassung",
-          text: `Senior Full-Stack Entwickler mit umfangreicher Erfahrung in der Entwicklung
-            skalierbarer Webanwendungen mit modernen JavaScript-Frameworks und Cloud-Technologien.
-            Versiert in Frontend- (Vue.js, React) und Backend-Entwicklung (Node.js),
-            mit Expertise in DevOps-Praktiken und Cloud-Infrastruktur. Nachgewiesene Erfolge
-            in der Bereitstellung hochperformanter Anwendungen, Implementierung robuster
-            CI/CD-Pipelines und Wartung von Produktionssystemen mit modernen Monitoring-Lösungen.
-            Starker Fokus auf Code-Qualität durch umfassende Teststrategien und Best Practices.`,
+          text: `Senior Full-Stack Entwickler mit fundierter Erfahrung in der Entwicklung skalierbarer Webanwendungen unter Verwendung einer Vielzahl moderner JavaScript-Frameworks, einschließlich Angular, Vue.js und React. Kompetent in Frontend- und Backend-Entwicklung mit einem ausgeprägten Verständnis von DevOps-Prinzipien und Cloud-Infrastruktur. Nachgewiesene Fähigkeit, hochperformante Anwendungen bereitzustellen, robuste CI/CD-Pipelines einzurichten und stabile Produktionsumgebungen unter Verwendung fortschrittlicher Monitoring-Tools zu warten. Engagiert für die Erstellung qualitativ hochwertigen Codes durch rigorose Tests und die Einhaltung bewährter Verfahren.`,
         },
         experience: {
           heading: "Arbeitserfahrung",
@@ -242,40 +274,68 @@ export default defineI18nConfig(() => ({
           description: "Beschreibung",
           projects: [
             {
-              title: "Senior Fullstack Entwickler",
+              title: "Senior Fullstack Ingenieur",
+              company: "INDTACT GMBH",
+              duration: "10/2024 - 12/2024 (2 months)",
+              technologies: [
+                "Typescript",
+                "Vue",
+                "Nuxt",
+                "Tailwind CSS",
+                "Node.js",
+                "WebSocket",
+                "Drizzle ORM",
+                "PostgreSQL",
+                "Zod",
+              ],
+              description:
+                "Ich entwickelte das Frontend und das BFF (Backend-for-Frontend) für ein Qualitätssicherungssystem, das in der Automobilfertigung eingesetzt wird. Das System kommuniziert mit spezialisierten Bluetooth-Geräten (SmartClicks), um Klangsignaturen zu erfassen und die korrekte Installation von Steckverbindern sicherzustellen. Zu meinen Aufgaben gehörten:",
+              bullets: [
+                "Entwurf einer domain-driven Frontend-Architektur mit Nuxt und TypeScript",
+                "Implementierung von Echtzeit-WebSocket-Verbindungen zur Datenerfassung und Live-Überwachung",
+                "Erstellung eines Gerätemanagement-Dashboards für die Konfiguration von Gateways und SmartClicks",
+                "Entwicklung von Datenerfassungsschnittstellen für die Aufzeichnung und Kennzeichnung von Klangsignaturen",
+                "Entwicklung von Echtzeit-Visualisierungen für Feedback zur Verbindungsqualität",
+              ],
+            },
+            {
+              title: "Senior Fullstack Ingenieur",
               company: "SMG",
               duration: "11/2023 - 12/2024 (1 Jahr, 1 Monat)",
               technologies: [
-                "Vue",
                 "Typescript",
+                "Vue",
                 "Vite",
                 "Vitest",
                 "Node.js",
                 "AWS (Api Gateway, Cloudfront, Lambda, SQS, SNS, CDK)",
-                "DataDog",
+                "Datadog",
                 "Git",
               ],
               description:
-                "Ich arbeitete mit einem internationalen Team an der Verbesserung der Verkaufsprozesse von Homegate.ch und Immoscout24.ch. Ich leitete die Aktualisierung des Frontends von Vue 2 auf Vue 3 und der Backend-Infrastruktur von Serverless zu AWS CDK. Ich richtete Datadog-Monitoring ein und wendete SRE-Prinzipien an, um die Zuverlässigkeit und Leistung zu verbessern. Mein Fokus lag auf:",
+                "Ich arbeitete mit einem internationalen Team an der Verbesserung der Verkaufsprozesse von Homegate.ch und Immoscout24.ch. Ich leitete die Migration des Frontends von Vue 2 auf Vue 3 und der Backend-Infrastruktur von Serverless zu AWS CDK. Ich richtete Datadog-Monitoring ein und wendete SRE-Prinzipien an, um die Zuverlässigkeit und Leistung zu verbessern. Mein Fokus lag auf:",
               bullets: [
+                "Planung und Durchführung der Migration auf Vue 3",
                 "Migration zu AWS CDK für besseres Infrastrukturmanagement",
-                "Planung und Durchführung des Vue 2 auf Vue 3 Upgrades",
                 "Implementierung von Datadog und SRE-Praktiken zur Steigerung der Zuverlässigkeit",
                 "Verbesserung der Entwicklungsumgebung für höhere Codequalität und Entwicklerproduktivität",
               ],
             },
             {
-              title: "Senior Frontend Entwickler",
+              title: "Senior Frontend Ingenieur",
               company: "Mercedes-benz.io",
               duration: "12/2021 - 09/2023 (1 Jahr, 10 Monate)",
               technologies: [
-                "Vue",
                 "TypeScript",
+                "Vue",
+                "Angular",
+                "Vite",
+                "Vitest",
+                "Nuxt",
+                "Tailwind CSS",
                 "Pinia",
                 "VueX",
-                "Vite",
                 "Jest",
-                "Vitest",
                 "GitHub",
                 "Kubernetes",
                 "Jenkins",
@@ -287,7 +347,8 @@ export default defineI18nConfig(() => ({
               bullets: [
                 "Definition von Feature-Spezifikationen und Koordination mit externen Teams",
                 "Leitung eines Teams von 5-8 Entwicklern",
-                "Steuerung des Upgrades von Vue 2 auf Vue 3",
+                "Planung und Durchführung der Migration auf Vue 3",
+                "Wartung und Support der bestehenden Angular-Codebasis",
                 "Migration der Testsuite von Jest zu Vitest",
                 "Implementierung von TypeScript",
                 "Entwicklung neuer Features und DevOps-Pipelines",
@@ -296,14 +357,15 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Senior Fullstack Entwickler",
+              title: "Senior Fullstack Ingenieur",
               company: "Auteon",
               duration: "10/2021 - 04/2022 (6 Monate)",
               technologies: [
-                "Vue",
                 "TypeScript",
-                "Google Cloud Functions",
+                "Vue",
+                "Webpack",
                 "Node.js",
+                "Google Cloud Functions",
                 "Cheerio",
                 "Puppeteer",
                 "Postman",
@@ -323,14 +385,14 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Fullstack Entwickler",
+              title: "Fullstack Ingenieur",
               company: "Ruhrkraft GmbH",
               duration: "09/2020 - 09/2021 (1 Jahr)",
               technologies: [
-                "Vue",
-                "React",
                 "TypeScript",
+                "Vue",
                 "VueX",
+                "React",
                 "Meteor",
                 "Node.js",
                 "Jest",
@@ -346,19 +408,21 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Fullstack Entwickler",
+              title: "Fullstack Ingenieur",
               company: "Westend Druckereibetriebe",
               duration: "01/2018 - 07/2021 (3 Jahre, 6 Monate)",
               technologies: [
+                "TypeScript",
+                "Vue",
+                "Angular",
+                "Tailwind CSS",
                 "Meteor",
                 "Node.js",
-                "Vue",
                 "React",
                 "VueX",
                 "Cypress",
                 "Jest",
                 "Docker",
-                "Tailwind CSS",
               ],
               description:
                 "Bei diesem großen Druckunternehmen war ich für die Verbesserung der digitalen Prozesse zuständig. Ich entwarf und entwickelte eine Auftragserfassungsanwendung, die als Hauptschnittstelle zwischen dem Unternehmen und den Kunden diente. Außerdem erstellte ich umfassende End-to-End- und Unit-Test-Suites, um die Zuverlässigkeit und Fehlerfreiheit der App sicherzustellen. Meine Haupttätigkeiten umfassten:",
@@ -385,6 +449,11 @@ export default defineI18nConfig(() => ({
             c1: "Verhandlungssicher (C1)",
             b1: "Mittelstufe (B1)",
           },
+        },
+        education: {
+          heading: "Ausbildung",
+          mediaIT: "Medieninformatik",
+          civilEngineering: "Bauingenieurwesen",
         },
       },
       common: {

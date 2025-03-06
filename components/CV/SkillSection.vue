@@ -6,6 +6,7 @@ const SKILLS = [
   "Vue",
   "Nuxt",
   "React",
+  "Angular",
   "Vite",
   "Webpack",
   "Vitest",
