@@ -32,7 +32,7 @@ defineProps<Props>();
           :key="index"
           class="flex flex-col gap-1"
         >
-          <h4 class="font-medium">
+          <h4 class="font-semibold text-sm mb-1">
             {{ project.title.toUpperCase() }} |
             {{ project.company.toUpperCase() }}
           </h4>

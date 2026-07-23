@@ -5,6 +5,8 @@ const SKILLS = [
   "Node.js",
   "Vue",
   "Nuxt",
+  "Pinia",
+  "Pinia Colada",
   "React",
   "Angular",
   "Vite",
@@ -15,11 +17,19 @@ const SKILLS = [
   "Tailwind CSS",
   "HTML",
   "CSS",
+  "WebSocket",
   "Git",
+  "Python",
   "Kubernetes",
   "Docker",
+  "AWS",
+  "Azure",
+  "Drizzle ORM",
+  "Prisma ORM",
   "PostgreSQL",
   "MongoDB",
+  "MSSQL",
+  "Supabase",
 ];
 </script>
 

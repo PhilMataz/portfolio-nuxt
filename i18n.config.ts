@@ -7,14 +7,16 @@ export default defineI18nConfig(() => ({
         title: "Senior Software Engineer",
         summary: {
           heading: "Summary",
-          text: `Senior Full-Stack Engineer with extensive experience in building scalable
-            web applications using modern JavaScript frameworks (Vue.js, React, Angular) and cloud technologies.
-            Skilled in both frontend and backend development,
-            with expertise in DevOps practices and cloud infrastructure. Proven track
-            record of delivering high-performance applications, implementing robust CI/CD
-            pipelines, and maintaining production systems using modern monitoring
-            solutions. Strong focus on code quality through comprehensive
-            testing strategies and best practices.`,
+          text: `Senior full-stack engineer with a frontend focus and
+            roughly ten years in the JavaScript/TypeScript
+            ecosystem. My specialisation is Vue.js — specifically
+            the modernisation of large, long-lived production
+            applications: Vue 2→3 migrations, Webpack→Vite build overhauls,
+            and the performance, testing, and reliability work that
+            keeps sizeable frontends maintainable. I work across the
+            stack with Node.js and SQL databases on AWS and Azure,
+            and I'm at home in enterprise environments where stability
+            and clear quality standards count.`,
         },
         experience: {
           heading: "Work Experience",
@@ -37,7 +39,7 @@ export default defineI18nConfig(() => ({
             {
               title: "Student Assistant",
               location: "Hochschule Düsseldorf",
-              duration: "06/2021 - 12/2027",
+              duration: "06/2016 - 12/2017",
             },
           ],
         },
@@ -49,8 +51,37 @@ export default defineI18nConfig(() => ({
           projects: [
             {
               title: "Senior Fullstack Engineer",
+              company: "Bilfinger Global IT",
+              duration: "08/2025 - today",
+              technologies: [
+                "Typescript",
+                "Vue",
+                "Vite",
+                "Vitest",
+                "Pinia",
+                "Pinia Colada",
+                "Tailwind CSS",
+                "Node.js",
+                "Prisma ORM",
+                "MSSQL",
+                "Bryntum",
+                "AG Grid",
+                "Azure",
+              ],
+              description:
+                "I am leading the redevelopment of a legacy resource allocation and scheduling application. The project focuses on improving performance, maintainability, and user experience by adopting a cutting-edge Vue 3 ecosystem and modern build tools. My responsibilities include:",
+              bullets: [
+                "Driving the migration from Webpack to Vite for faster builds and improved DX",
+                "Introducing Pinia and Pinia Colada for intelligent, cache-aware state management",
+                "Rebuilding the scheduling and resource planning modules in Vue 3",
+                "Integrating and customizing advanced UI components (Bryntum, AgGrid)",
+                "Implementing backend APIs and logic with Node.js, MSSQL and Prisma ORM",
+              ],
+            },
+            {
+              title: "Senior Fullstack Engineer",
               company: "INDTACT GMBH",
-              duration: "10/2024 - 12/2024 (2 months)",
+              duration: "10/2024 - 06/2025 (9 months)",
               technologies: [
                 "Typescript",
                 "Vue",
@@ -60,7 +91,8 @@ export default defineI18nConfig(() => ({
                 "WebSocket",
                 "Drizzle ORM",
                 "PostgreSQL",
-                "Zod",
+                "Python",
+                "Docker",
               ],
               description:
                 "I developed the frontend and BFF (Backend-for-Frontend) for a quality assurance system used in automotive manufacturing. The system interfaces with specialized Bluetooth devices (SmartClicks) to collect sound signatures and ensure correct connector installations. My responsibilities included:",
@@ -132,7 +164,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Senior Fullstack Engineer",
+              title: "Fullstack Engineer",
               company: "Auteon",
               duration: "10/2021 - 04/2022 (6 months)",
               technologies: [
@@ -237,33 +269,42 @@ export default defineI18nConfig(() => ({
     },
     de: {
       cv: {
-        title: "Senior Software Ingenieur",
+        title: "Senior Software Engineer",
         summary: {
           heading: "Zusammenfassung",
-          text: `Senior Full-Stack Entwickler mit fundierter Erfahrung in der Entwicklung skalierbarer Webanwendungen unter Verwendung einer Vielzahl moderner JavaScript-Frameworks, einschließlich Angular, Vue.js und React. Kompetent in Frontend- und Backend-Entwicklung mit einem ausgeprägten Verständnis von DevOps-Prinzipien und Cloud-Infrastruktur. Nachgewiesene Fähigkeit, hochperformante Anwendungen bereitzustellen, robuste CI/CD-Pipelines einzurichten und stabile Produktionsumgebungen unter Verwendung fortschrittlicher Monitoring-Tools zu warten. Engagiert für die Erstellung qualitativ hochwertigen Codes durch rigorose Tests und die Einhaltung bewährter Verfahren.`,
+          text: `Senior Fullstack-Entwickler mit Frontend-Schwerpunkt
+            und rund zehn Jahren Erfahrung im JavaScript/TypeScript-Ökosystem.
+            Mein Schwerpunkt liegt auf Vue.js – insbesondere auf der Modernisierung
+            großer, langlebiger Produktivanwendungen:
+            Migrationen von Vue 2 auf Vue 3, Umstellungen der Build-Toolchain
+            von Webpack auf Vite sowie die Arbeit an Performance,
+            Testing und Zuverlässigkeit, die umfangreiche Frontends wartbar hält.
+            Ich arbeite über den gesamten Stack mit Node.js und SQL-Datenbanken
+            auf AWS und Azure und bin in Enterprise-Umgebungen zu Hause,
+            in denen Stabilität und nachvollziehbare Qualitätsstandards zählen.`,
         },
         experience: {
           heading: "Arbeitserfahrung",
           experiences: [
             {
-              title: "Freiberuflicher Software Ingenieur",
+              title: "Freiberuflicher Software Engineer",
               location: "Essen",
               duration: "01/2022 - heute",
             },
             {
-              title: "Software Ingenieur",
+              title: "Software Engineer",
               location: "Ruhrkraft GmbH - Essen",
               duration: "06/2021 - 12/2021",
             },
             {
-              title: "Software Ingenieur",
+              title: "Software Engineer",
               location: "Westend Druckereibetriebe GmbH - Essen",
               duration: "01/2018 - 06/2021",
             },
             {
               title: "Werkstudent",
               location: "Hochschule Düsseldorf",
-              duration: "06/2021 - 12/2027",
+              duration: "06/2016 - 12/2017",
             },
           ],
         },
@@ -274,9 +315,39 @@ export default defineI18nConfig(() => ({
           description: "Beschreibung",
           projects: [
             {
-              title: "Senior Fullstack Ingenieur",
+              title: "Senior Fullstack Engineer",
+              company: "Bilfinger Global IT",
+              duration: "08/2025 - heute",
+              technologies: [
+                "Typescript",
+                "Vue",
+                "Vite",
+                "Vitest",
+                "Pinia",
+                "Pinia Colada",
+                "Tailwind CSS",
+                "Node.js",
+                "Prisma ORM",
+                "MSSQL",
+                "Bryntum",
+                "AG Grid",
+                "Azure",
+              ],
+              description:
+                "Im Rahmen einer Modernisierung übernehme ich die technische Leitung beim Neubau einer Ressourcenplanungs- und Scheduling-Applikation. Der Fokus liegt auf der Verbesserung von Performance, Wartbarkeit und UX durch den Einsatz moderner Frontend-Technologien. Meine Aufgaben umfassen:",
+              bullets: [
+                "Migration von Webpack auf Vite",
+                "Einführung von Pinia und Pinia Colada für intelligentes, cache-basiertes State-Management",
+                "Neuentwicklung der Ressourcen- und Planungsmodule",
+                "Integration und Anpassung komplexer UI-Komponenten (Bryntum, AgGrid)",
+                "Implementierung serverseitiger Logik und APIs mit Node.js, MSSQL und Prisma ORM",
+                "Sicherstellung der reibungslosen Integration in die bestehende Azure-Infrastruktur",
+              ],
+            },
+            {
+              title: "Senior Fullstack Engineer",
               company: "INDTACT GMBH",
-              duration: "10/2024 - 12/2024 (2 months)",
+              duration: "10/2024 - 06/2025 (9 Monate)",
               technologies: [
                 "Typescript",
                 "Vue",
@@ -286,7 +357,8 @@ export default defineI18nConfig(() => ({
                 "WebSocket",
                 "Drizzle ORM",
                 "PostgreSQL",
-                "Zod",
+                "Python",
+                "Docker",
               ],
               description:
                 "Ich entwickelte das Frontend und das BFF (Backend-for-Frontend) für ein Qualitätssicherungssystem, das in der Automobilfertigung eingesetzt wird. Das System kommuniziert mit spezialisierten Bluetooth-Geräten (SmartClicks), um Klangsignaturen zu erfassen und die korrekte Installation von Steckverbindern sicherzustellen. Zu meinen Aufgaben gehörten:",
@@ -299,7 +371,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Senior Fullstack Ingenieur",
+              title: "Senior Fullstack Engineer",
               company: "SMG",
               duration: "11/2023 - 12/2024 (1 Jahr, 1 Monat)",
               technologies: [
@@ -322,7 +394,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Senior Frontend Ingenieur",
+              title: "Senior Frontend Engineer",
               company: "Mercedes-benz.io",
               duration: "12/2021 - 09/2023 (1 Jahr, 10 Monate)",
               technologies: [
@@ -357,7 +429,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Senior Fullstack Ingenieur",
+              title: "Fullstack Engineer",
               company: "Auteon",
               duration: "10/2021 - 04/2022 (6 Monate)",
               technologies: [
@@ -385,7 +457,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Fullstack Ingenieur",
+              title: "Fullstack Engineer",
               company: "Ruhrkraft GmbH",
               duration: "09/2020 - 09/2021 (1 Jahr)",
               technologies: [
@@ -408,7 +480,7 @@ export default defineI18nConfig(() => ({
               ],
             },
             {
-              title: "Fullstack Ingenieur",
+              title: "Fullstack Engineer",
               company: "Westend Druckereibetriebe",
               duration: "01/2018 - 07/2021 (3 Jahre, 6 Monate)",
               technologies: [
