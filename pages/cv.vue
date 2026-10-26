@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Project } from "~/types/cv";
+import type { Experience, Project } from "~/types/cv";
 import { CV } from "~/data/cv";
 
-const { profile, experiences, projects } = CV;
+const { profile, projects } = CV;
+const experiences: readonly Experience[] = CV.experiences;
 
 useHead({
   title: `CV - ${profile.firstName} ${profile.lastName}`,
@@ -69,12 +70,19 @@ for (let i = 0; i < projects.length; i += 2) {
             class="flex flex-col gap-1"
           >
             <h4 class="font-medium">
-              {{ tr(experience.role).toUpperCase() }}
+              {{ tr(experience.title).toUpperCase() }}
             </h4>
-            <span class="text-sm">{{ experience.location }}</span>
+            <span class="text-sm"
+              >{{ experience.company }} - {{ experience.city }}</span
+            >
             <span class="text-sm">{{
               period(experience.period, { withLength: false })
             }}</span>
+            <span
+              v-if="experience.note"
+              class="text-sm italic"
+              >{{ tr(experience.note) }}</span
+            >
           </div>
         </div>
       </div>

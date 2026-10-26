@@ -28,19 +28,35 @@ export type Period = { start: YearMonth; end?: YearMonth };
 /** A period in whole years. No `to` means ongoing. */
 export type YearRange = { from: number; to?: number };
 
+/** Hours per week, stated only when a Project was not full-time. */
+export type Workload = { hoursPerWeek: number };
+
+/** One engagement for a client or employer. See CONTEXT.md. */
 export type Project = {
   role: Translated;
   company: string;
+  /** The sector the client operates in, named so a recruiter can match it. */
+  industry: Translated;
   period: Period;
+  teamSize?: number;
+  /** One to three sentences saying what the Project was and why it existed. */
+  context: Translated;
+  /** Concrete activities done, one per entry. */
+  tasks: readonly Translated[];
+  /** What changed because of the work. May be empty, which the review flags. */
+  outcomes: readonly Translated[];
   technologies: readonly Tech[];
-  description: Translated;
-  bullets: readonly Translated[];
+  workload?: Workload;
 };
 
+/** A span of contractual status: employed or self-employed. Carries no work content. */
 export type Experience = {
-  role: Translated;
-  location: string;
+  title: Translated;
+  company: string;
+  city: string;
   period: Period;
+  /** One line explaining an overlap with another Experience or Project. */
+  note?: Translated;
 };
 
 export type Education = {

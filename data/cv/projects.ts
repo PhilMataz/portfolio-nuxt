@@ -4,10 +4,14 @@ export const PROJECTS = [
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "Bilfinger Global IT",
+    industry: {
+      de: "Industrieservices / Engineering",
+      en: "Industrial services / engineering",
+    },
     period: { start: "2025-08" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "Vite",
       "Vitest",
       "Pinia",
@@ -23,11 +27,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Im Rahmen einer Modernisierung übernehme ich die technische Leitung beim Neubau einer Ressourcenplanungs- und Scheduling-Applikation. Der Fokus liegt auf der Verbesserung von Performance, Wartbarkeit und UX durch den Einsatz moderner Frontend-Technologien. Meine Aufgaben umfassen:",
-      en: "I am leading the redevelopment of a legacy resource allocation and scheduling application. The project focuses on improving performance, maintainability, and user experience by adopting a cutting-edge Vue 3 ecosystem and modern build tools. My responsibilities include:",
+    context: {
+      de: "Im Rahmen einer Modernisierung übernehme ich die technische Leitung beim Neubau einer Ressourcenplanungs- und Scheduling-Applikation. Der Fokus liegt auf der Verbesserung von Performance, Wartbarkeit und UX durch den Einsatz moderner Frontend-Technologien.",
+      en: "I am leading the redevelopment of a legacy resource allocation and scheduling application. The project focuses on improving performance, maintainability and user experience by adopting the Vue 3 ecosystem and modern build tools.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Migration von Webpack auf Vite",
         en: "Driving the migration from Webpack to Vite for faster builds and improved DX",
@@ -53,14 +57,19 @@ export const PROJECTS = [
         en: "Ensuring smooth integration with the existing Azure infrastructure",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "INDTACT GMBH",
+    industry: {
+      de: "Automobilindustrie / Industrie-IoT",
+      en: "Automotive / industrial IoT",
+    },
     period: { start: "2024-10", end: "2025-06" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "Nuxt",
       "Tailwind CSS",
       "Node.js",
@@ -73,11 +82,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Ich entwickelte das Frontend und das BFF (Backend-for-Frontend) für ein Qualitätssicherungssystem, das in der Automobilfertigung eingesetzt wird. Das System kommuniziert mit spezialisierten Bluetooth-Geräten (SmartClicks), um Klangsignaturen zu erfassen und die korrekte Installation von Steckverbindern sicherzustellen. Zu meinen Aufgaben gehörten:",
-      en: "I developed the frontend and BFF (Backend-for-Frontend) for a quality assurance system used in automotive manufacturing. The system interfaces with specialized Bluetooth devices (SmartClicks) to collect sound signatures and ensure correct connector installations. My responsibilities included:",
+    context: {
+      de: "Ich entwickelte das Frontend und das BFF (Backend-for-Frontend) für ein Qualitätssicherungssystem, das in der Automobilfertigung eingesetzt wird. Das System kommuniziert mit spezialisierten Bluetooth-Geräten (SmartClicks), um Klangsignaturen zu erfassen und die korrekte Installation von Steckverbindern sicherzustellen.",
+      en: "I developed the frontend and BFF (Backend-for-Frontend) for a quality assurance system used in automotive manufacturing. The system interfaces with specialized Bluetooth devices (SmartClicks) to collect sound signatures and ensure correct connector installation.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Entwurf einer domain-driven Frontend-Architektur mit Nuxt und TypeScript",
         en: "Architecting a domain-driven frontend structure using Nuxt and TypeScript",
@@ -103,14 +112,19 @@ export const PROJECTS = [
         en: "Developing real-time visualizations for connection quality feedback",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "SMG",
+    industry: {
+      de: "Immobilienplattformen / Online-Marktplätze",
+      en: "Real estate platforms / online marketplaces",
+    },
     period: { start: "2023-11", end: "2024-12" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "Vite",
       "Vitest",
       "Node.js",
@@ -127,11 +141,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Ich arbeitete mit einem internationalen Team an der Verbesserung der Verkaufsprozesse von Homegate.ch und Immoscout24.ch. Ich leitete die Migration des Frontends von Vue 2 auf Vue 3 und der Backend-Infrastruktur von Serverless zu AWS CDK. Ich richtete Datadog-Monitoring ein und wendete SRE-Prinzipien an, um die Zuverlässigkeit und Leistung zu verbessern. Mein Fokus lag auf:",
-      en: "I worked with an international team to improve the sales funnels of Homegate.ch and Immoscout24.ch. I led the upgrades of the frontend from Vue 2 to Vue 3 and the backend infrastructure from Serverless to AWS CDK. I set up Datadog monitoring and applied SRE principles to enhance reliability and performance. My focus was on:",
+    context: {
+      de: "Ich arbeitete mit einem internationalen Team an der Verbesserung der Verkaufsprozesse von Homegate.ch und Immoscout24.ch. Ich leitete die Migration des Frontends von Vue 2 auf Vue 3 und der Backend-Infrastruktur von Serverless zu AWS CDK. Ich richtete Datadog-Monitoring ein und wendete SRE-Prinzipien an, um Zuverlässigkeit und Leistung zu verbessern.",
+      en: "I worked with an international team to improve the sales funnels of Homegate.ch and Immoscout24.ch. I led the upgrades of the frontend from Vue 2 to Vue 3 and of the backend infrastructure from Serverless to AWS CDK. I set up Datadog monitoring and applied SRE principles to improve reliability and performance.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Migration zu AWS CDK für besseres Infrastrukturmanagement",
         en: "Migrating to AWS CDK for better infrastructure management",
@@ -149,13 +163,18 @@ export const PROJECTS = [
         en: "Improving the dev environment for higher code quality and developer productivity",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Senior Frontend Engineer", en: "Senior Frontend Engineer" },
     company: "Mercedes-benz.io",
+    industry: {
+      de: "Automobilindustrie / E-Commerce",
+      en: "Automotive / e-commerce",
+    },
     period: { start: "2021-12", end: "2023-09" },
     technologies: [
-      "Vue",
+      "Vue.js",
       "Nuxt",
       "Angular",
       "TypeScript",
@@ -174,11 +193,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Als Teil eines internationalen Teams trug ich zur Entwicklung der Mercedes Me Webshop-Plattform bei. Meine Aufgaben umfassten:",
-      en: "As part of an international team, I contributed to developing the Mercedes Me web storefront. My responsibilities included:",
+    context: {
+      de: "Als Teil eines internationalen Teams trug ich zur Entwicklung der Mercedes Me Webshop-Plattform bei.",
+      en: "As part of an international team, I contributed to developing the Mercedes Me web storefront.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Definition von Feature-Spezifikationen und Koordination mit externen Teams",
         en: "Defining feature specifications and coordinating with external teams",
@@ -216,14 +235,19 @@ export const PROJECTS = [
         en: "Improving code quality and security",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Auteon",
+    industry: {
+      de: "Automotive-Aftermarket / E-Commerce",
+      en: "Automotive aftermarket / e-commerce",
+    },
     period: { start: "2021-10", end: "2022-04" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "Webpack",
       "Node.js",
       "Google Cloud Functions",
@@ -236,11 +260,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Ich entwickelte einen Proof of Concept zur Analyse von Automotive-eCommerce-Websites und erstellte einen Webscrapingdienst. Nach Fertigstellung schulte ich andere Entwickler in der Nutzung. Meine Arbeit umfasste:",
-      en: "I built a proof of concept to reverse engineer automotive eCommerce websites and create a web scraping service. After completing it, I trained other developers on how to use it. My work involved:",
+    context: {
+      de: "Ich entwickelte einen Proof of Concept zur Analyse von Automotive-eCommerce-Websites und erstellte einen Webscraping-Dienst. Nach Fertigstellung schulte ich andere Entwickler in der Nutzung.",
+      en: "I built a proof of concept to reverse engineer automotive eCommerce websites and create a web scraping service. After completing it, I trained other developers on how to use it.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Analyse von Zielwebsites zum Verständnis ihrer Struktur",
         en: "Analyzing target websites to understand their structure",
@@ -270,14 +294,19 @@ export const PROJECTS = [
         en: "Training developers on using the service",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Ruhrkraft GmbH",
+    industry: {
+      de: "Digital Signage / Werbetechnik",
+      en: "Digital signage / advertising",
+    },
     period: { start: "2020-09", end: "2021-09" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "VueX",
       "React",
       "Meteor",
@@ -288,11 +317,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Ich entwarf und entwickelte einen Scheduler für ein Digital Signage CMS. Dies ermöglichte Benutzern die einfache Planung, Terminierung und das Hochladen von Werbekampagnen zur Anzeige auf Bildschirmen an verschiedenen Standorten. Meine Hauptziele waren:",
-      en: "I designed and built a scheduler for a Digital Signage CMS. This allowed users to easily plan, schedule, and upload ad campaigns to be displayed on screens in multiple locations. My main goals were:",
+    context: {
+      de: "Ich entwarf und entwickelte einen Scheduler für ein Digital Signage CMS. Dieser ermöglichte Benutzern die einfache Planung, Terminierung und das Hochladen von Werbekampagnen zur Anzeige auf Bildschirmen an verschiedenen Standorten.",
+      en: "I designed and built a scheduler for a Digital Signage CMS. It allowed users to plan, schedule and upload ad campaigns for display on screens in multiple locations.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Entwicklung einer intuitiven Oberfläche für das Kampagnenmanagement",
         en: "Developing an intuitive interface for managing campaigns",
@@ -314,14 +343,16 @@ export const PROJECTS = [
         en: "Thoroughly testing to guarantee reliable display on all screens",
       },
     ],
+    outcomes: [],
   },
   {
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Westend Druckereibetriebe",
+    industry: { de: "Druckindustrie", en: "Printing industry" },
     period: { start: "2018-01", end: "2021-07" },
     technologies: [
       "TypeScript",
-      "Vue",
+      "Vue.js",
       "Angular",
       "Tailwind CSS",
       "Meteor",
@@ -336,11 +367,11 @@ export const PROJECTS = [
       "HTML",
       "CSS",
     ],
-    description: {
-      de: "Bei diesem großen Druckunternehmen war ich für die Verbesserung der digitalen Prozesse zuständig. Ich entwarf und entwickelte eine Auftragserfassungsanwendung, die als Hauptschnittstelle zwischen dem Unternehmen und den Kunden diente. Außerdem erstellte ich umfassende End-to-End- und Unit-Test-Suites, um die Zuverlässigkeit und Fehlerfreiheit der App sicherzustellen. Meine Haupttätigkeiten umfassten:",
-      en: "At this major printing company, I was tasked with improving their digital processes. I designed and developed an order placement application that served as the main interface between the company and customers. I also created comprehensive end-to-end and unit test suites to ensure the app was reliable and bug-free. My key activities included:",
+    context: {
+      de: "Bei diesem großen Druckunternehmen war ich für die Verbesserung der digitalen Prozesse zuständig. Ich entwarf und entwickelte eine Auftragserfassungsanwendung, die als Hauptschnittstelle zwischen dem Unternehmen und den Kunden diente. Außerdem erstellte ich umfassende End-to-End- und Unit-Test-Suites, um die Zuverlässigkeit der App sicherzustellen.",
+      en: "At this major printing company, I was tasked with improving its digital processes. I designed and developed an order placement application that served as the main interface between the company and its customers. I also created comprehensive end-to-end and unit test suites to keep the app reliable.",
     },
-    bullets: [
+    tasks: [
       {
         de: "Gestaltung von Benutzeroberflächen und Workflows für die Auftragsapp",
         en: "Designing UIs and workflows for the order app",
@@ -362,5 +393,6 @@ export const PROJECTS = [
         en: "Collaborating with cross-functional teams on cohesive development strategies",
       },
     ],
+    outcomes: [],
   },
 ] as const satisfies readonly Project[];

@@ -5,7 +5,7 @@ export const TECH = [
   "HTML",
   "CSS",
   "Node.js",
-  "Vue",
+  "Vue.js",
   "Nuxt",
   "Pinia",
   "Pinia Colada",

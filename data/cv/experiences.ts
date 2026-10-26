@@ -2,26 +2,24 @@ import type { Experience } from "~/types/cv";
 
 export const EXPERIENCES = [
   {
-    role: {
+    title: {
       de: "Freiberuflicher Software Engineer",
       en: "Freelance Software Engineer",
     },
-    location: "Essen",
+    company: "Freelance",
+    city: "Essen",
     period: { start: "2022-01" },
   },
   {
-    role: { de: "Software Engineer", en: "Software Engineer" },
-    location: "Ruhrkraft GmbH - Essen",
+    title: { de: "Software Engineer", en: "Software Engineer" },
+    company: "Ruhrkraft GmbH",
+    city: "Essen",
     period: { start: "2021-06", end: "2021-12" },
   },
   {
-    role: { de: "Software Engineer", en: "Software Engineer" },
-    location: "Westend Druckereibetriebe GmbH - Essen",
+    title: { de: "Software Engineer", en: "Software Engineer" },
+    company: "Westend Druckereibetriebe GmbH",
+    city: "Essen",
     period: { start: "2018-01", end: "2021-06" },
-  },
-  {
-    role: { de: "Werkstudent", en: "Student Assistant" },
-    location: "Hochschule Düsseldorf",
-    period: { start: "2016-06", end: "2017-12" },
   },
 ] as const satisfies readonly Experience[];

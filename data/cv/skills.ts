@@ -5,7 +5,7 @@ export const SKILLS = [
   "JavaScript",
   "TypeScript",
   "Node.js",
-  "Vue",
+  "Vue.js",
   "Nuxt",
   "Pinia",
   "Pinia Colada",

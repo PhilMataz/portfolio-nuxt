@@ -38,7 +38,21 @@ const { tr, period } = useTranslated();
             {{ tr(project.role).toUpperCase() }} |
             {{ project.company.toUpperCase() }}
           </h4>
-          <span class="-mt-2 text-sm">{{ period(project.period) }}</span>
+          <span class="-mt-2 text-sm">
+            {{ period(project.period) }}
+            <template v-if="project.workload">
+              · {{ $t("cv.workload") }}: {{ project.workload.hoursPerWeek }}
+              {{ $t("cv.hoursPerWeek") }}
+            </template>
+          </span>
+          <div class="text-sm">
+            <span class="italic">{{ $t("cv.industry") }}:</span>
+            {{ tr(project.industry) }}
+            <template v-if="project.teamSize">
+              · <span class="italic">{{ $t("cv.teamSize") }}:</span>
+              {{ project.teamSize }}
+            </template>
+          </div>
           <div class="mt-2">
             <h5 class="text-sm italic">
               {{ $t("cv.technologies") }}
@@ -49,17 +63,38 @@ const { tr, period } = useTranslated();
           </div>
           <div class="mt-2">
             <h5 class="text-sm italic">
-              {{ $t("cv.description") }}
+              {{ $t("cv.context") }}
             </h5>
             <div class="leading-tight">
-              {{ tr(project.description) }}
+              {{ tr(project.context) }}
             </div>
-            <ul class="ml-8 mt-2 list-outside list-disc text-sm">
+          </div>
+          <div class="mt-2">
+            <h5 class="text-sm italic">
+              {{ $t("cv.tasks") }}
+            </h5>
+            <ul class="ml-8 list-outside list-disc text-sm">
               <li
-                v-for="bullet in project.bullets"
-                :key="bullet.en"
+                v-for="task in project.tasks"
+                :key="task.en"
               >
-                {{ tr(bullet) }}
+                {{ tr(task) }}
+              </li>
+            </ul>
+          </div>
+          <div
+            v-if="project.outcomes.length"
+            class="mt-2"
+          >
+            <h5 class="text-sm italic">
+              {{ $t("cv.outcomes") }}
+            </h5>
+            <ul class="ml-8 list-outside list-disc text-sm">
+              <li
+                v-for="outcome in project.outcomes"
+                :key="outcome.en"
+              >
+                {{ tr(outcome) }}
               </li>
             </ul>
           </div>
