@@ -14,8 +14,9 @@
   },
   "dependencies": {
     "@nuxt/eslint": "latest",
+    "@nuxt/kit": "3.21.11",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/i18n": "latest",
+    "@nuxtjs/i18n": "^8.5.5",
     "@tailwindcss/vite": "^4.0.0",
     "nuxt": "^3.21.11",
     "nuxt-lucide-icons": "^1.0.5",
