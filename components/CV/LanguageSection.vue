@@ -1,23 +1,19 @@
 <script setup lang="ts">
-const LANGUAGES = {
-  german: "c2",
-  english: "c1",
-  portuguese: "b1",
-} as const;
+import { CV } from "~/data/cv";
 </script>
 
 <template>
   <div>
     <CVSectionHeader
-      title="cv.languages.heading"
+      title="cv.languages"
       class="-ml-px"
     />
     <div
-      v-for="(level, language) in LANGUAGES"
+      v-for="{ language, level } in CV.languages"
       :key="language"
     >
-      {{ $t(`cv.languages.languages.${language}`) }} -
-      {{ $t(`cv.languages.levels.${level}`) }}
+      {{ $t(`language.${language}`) }} -
+      {{ $t(`level.${level}`) }}
     </div>
   </div>
 </template>

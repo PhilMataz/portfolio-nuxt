@@ -1,26 +1,19 @@
 <script setup lang="ts">
-import type { Experience, Project } from "~/types/cv";
+import type { Project } from "~/types/cv";
+import { CV } from "~/data/cv";
+
+const { profile, experiences, projects } = CV;
 
 useHead({
-  title: "CV - Phillip Matambanadzo",
+  title: `CV - ${profile.firstName} ${profile.lastName}`,
 });
 
-const { tm } = useI18n();
+const { tr, period } = useTranslated();
 
-const experiences = computed<Experience[]>(() =>
-  tm("cv.experience.experiences"),
-);
-
-const projectTuples = computed(() => {
-  const result: Project[][] = [];
-  const projects: Project[] = tm("cv.projects.projects");
-
-  for (let i = 0; i < projects.length; i += 2) {
-    result.push(projects.slice(i, i + 2));
-  }
-
-  return result;
-});
+const projectTuples: (readonly Project[])[] = [];
+for (let i = 0; i < projects.length; i += 2) {
+  projectTuples.push(projects.slice(i, i + 2));
+}
 </script>
 
 <template>
@@ -45,29 +38,28 @@ const projectTuples = computed(() => {
       <div class="p-6">
         <div class="mb-14">
           <h1 class="font-display flex flex-col leading-none">
-            <span class="-ml-1 -mt-2 text-9xl"> Phillip </span>
-            <span class="-mt-4 text-6xl">Matambanadzo</span>
+            <span class="-ml-1 -mt-2 text-9xl"> {{ profile.firstName }} </span>
+            <span class="-mt-4 text-6xl">{{ profile.lastName }}</span>
           </h1>
-          <CVSectionHeader
-            title="cv.title"
-            class="ml-[2px] text-blue-grey-500"
-          />
+          <h4 class="mb-5 ml-[2px] text-xl tracking-widest text-blue-grey-500">
+            {{ tr(profile.title).toUpperCase() }}
+          </h4>
         </div>
 
         <!-- SUMMARY -->
         <div class="mb-14">
           <CVSectionHeader
-            title="cv.summary.heading"
+            title="cv.summary"
             class="text-red-vivid-300"
           />
           <p>
-            {{ $t("cv.summary.text") }}
+            {{ tr(profile.summary) }}
           </p>
         </div>
 
         <!-- WORK EXPERIENCE -->
         <CVSectionHeader
-          title="cv.experience.heading"
+          title="cv.experience"
           class="text-red-vivid-300"
         />
         <div class="flex flex-col gap-6">
@@ -77,10 +69,12 @@ const projectTuples = computed(() => {
             class="flex flex-col gap-1"
           >
             <h4 class="font-medium">
-              {{ experience.title.toUpperCase() }}
+              {{ tr(experience.role).toUpperCase() }}
             </h4>
             <span class="text-sm">{{ experience.location }}</span>
-            <span class="text-sm">{{ experience.duration }}</span>
+            <span class="text-sm">{{
+              period(experience.period, { withLength: false })
+            }}</span>
           </div>
         </div>
       </div>

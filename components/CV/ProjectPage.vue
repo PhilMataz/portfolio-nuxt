@@ -2,11 +2,13 @@
 import type { Project } from "~/types/cv";
 
 interface Props {
-  projects: Project[];
+  projects: readonly Project[];
   hasHeader: boolean;
 }
 
 defineProps<Props>();
+
+const { tr, period } = useTranslated();
 </script>
 
 <template>
@@ -22,24 +24,24 @@ defineProps<Props>();
     <div class="p-6">
       <CVSectionHeader
         v-if="hasHeader"
-        title="cv.projects.heading"
+        title="cv.projects"
         class="text-red-vivid-300"
       />
 
       <div class="flex flex-col gap-10">
         <div
-          v-for="(project, index) in projects"
-          :key="index"
+          v-for="project in projects"
+          :key="project.company + project.period.start"
           class="flex flex-col gap-1"
         >
           <h4 class="font-semibold text-sm mb-1">
-            {{ project.title.toUpperCase() }} |
+            {{ tr(project.role).toUpperCase() }} |
             {{ project.company.toUpperCase() }}
           </h4>
-          <span class="-mt-2 text-sm">{{ project.duration }}</span>
+          <span class="-mt-2 text-sm">{{ period(project.period) }}</span>
           <div class="mt-2">
             <h5 class="text-sm italic">
-              {{ $t("cv.projects.technologies") }}
+              {{ $t("cv.technologies") }}
             </h5>
             <div class="leading-tight">
               {{ project.technologies.join(", ") }}
@@ -47,17 +49,17 @@ defineProps<Props>();
           </div>
           <div class="mt-2">
             <h5 class="text-sm italic">
-              {{ $t("cv.projects.description") }}
+              {{ $t("cv.description") }}
             </h5>
             <div class="leading-tight">
-              {{ project.description }}
+              {{ tr(project.description) }}
             </div>
             <ul class="ml-8 mt-2 list-outside list-disc text-sm">
               <li
                 v-for="bullet in project.bullets"
-                :key="bullet"
+                :key="bullet.en"
               >
-                {{ bullet }}
+                {{ tr(bullet) }}
               </li>
             </ul>
           </div>

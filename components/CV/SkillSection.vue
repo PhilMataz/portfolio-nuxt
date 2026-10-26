@@ -1,36 +1,5 @@
 <script setup lang="ts">
-const SKILLS = [
-  "Javascript",
-  "Typescript",
-  "Node.js",
-  "Vue",
-  "Nuxt",
-  "Pinia",
-  "Pinia Colada",
-  "React",
-  "Angular",
-  "Vite",
-  "Webpack",
-  "Vitest",
-  "Jest",
-  "Cypress",
-  "Tailwind CSS",
-  "HTML",
-  "CSS",
-  "WebSocket",
-  "Git",
-  "Python",
-  "Kubernetes",
-  "Docker",
-  "AWS",
-  "Azure",
-  "Drizzle ORM",
-  "Prisma ORM",
-  "PostgreSQL",
-  "MongoDB",
-  "MSSQL",
-  "Supabase",
-];
+import { CV } from "~/data/cv";
 </script>
 
 <template>
@@ -40,7 +9,7 @@ const SKILLS = [
       class="-ml-px"
     />
     <div class="text-sm">
-      {{ SKILLS.join(", ") }}
+      {{ CV.skills.join(", ") }}
     </div>
   </div>
 </template>

@@ -1,46 +1,33 @@
 <script setup lang="ts">
-const EDUCATIONS = [
-  {
-    degree: "Abitur",
-    school: "Alfred-Krupp-Schule Essen",
-    time: "2009",
-  },
-  {
-    degree: "Bachelor of Science",
-    program: "cv.education.civilEngineering",
-    school: "Ruhr Uni Bochum",
-    time: "2010 - 2015",
-  },
-  {
-    degree: "Bachelor of Science",
-    program: "cv.education.mediaIT",
-    school: "HS Düsseldorf",
-    time: "2015 - 2018",
-  },
-];
+import { CV } from "~/data/cv";
+import { formatYearRange } from "~/utils/period";
+
+const { tr } = useTranslated();
 </script>
 
 <template>
   <div>
     <CVSectionHeader
-      title="cv.education.heading"
+      title="cv.education"
       class="-ml-px"
     />
     <div class="flex flex-col gap-4">
       <div
-        class="text-xs"
-        v-for="(education, index) in EDUCATIONS"
+        v-for="(education, index) in CV.education"
         :key="index"
+        class="text-xs"
       >
         <h5 class="text-md font-medium uppercase text-sm">
           {{ education.degree }}
         </h5>
         <div>
-          <span v-if="education.program"> {{ $t(education.program) }} · </span>
+          <span v-if="'program' in education">
+            {{ tr(education.program) }} ·
+          </span>
           {{ education.school }}
         </div>
         <span>
-          {{ education.time }}
+          {{ formatYearRange(education.years) }}
         </span>
       </div>
     </div>

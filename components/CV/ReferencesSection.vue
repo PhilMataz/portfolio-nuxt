@@ -1,20 +1,7 @@
 <script setup lang="ts">
-const REFERENCES = [
-  {
-    name: "David Müller",
-    company: "Hakobu",
-    position: "common.seniorSoftwareArchitect",
-    tel: "+49 177 634 002",
-    email: "david.mueller@hakobu.de",
-  },
-  {
-    name: "Chi Nguyen",
-    company: "May Solutions",
-    position: "common.seniorSoftwareArchitect",
-    tel: "+49 176 553 684 96",
-    email: "chi@may-solutions.io",
-  },
-];
+import { CV } from "~/data/cv";
+
+const { tr } = useTranslated();
 </script>
 
 <template>
@@ -25,7 +12,7 @@ const REFERENCES = [
     />
     <div class="flex flex-col gap-6">
       <div
-        v-for="reference in REFERENCES"
+        v-for="reference in CV.references"
         :key="reference.name"
       >
         <div class="mb-2">
@@ -34,7 +21,7 @@ const REFERENCES = [
             {{ reference.company.toUpperCase() }}
           </h5>
           <span class="-mt-2 text-sm leading-tight">
-            {{ $t(reference.position) }}
+            {{ tr(reference.role) }}
           </span>
         </div>
         <div class="inline-flex items-center gap-2 text-xs">

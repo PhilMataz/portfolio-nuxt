@@ -1,45 +1,49 @@
+<script lang="ts" setup>
+import GithubLogoIcon from "../icons/github.vue";
+import LinkedInLogoIcon from "../icons/linkedIn.vue";
+import { CV } from "~/data/cv";
+
+const contact = CV.profile.contact;
+</script>
+
 <template>
   <div class="flex flex-col gap-2">
     <div class="inline-flex items-center gap-2">
-      <LucideSmartphone class="size-4" />+49 1590 656 2753
+      <LucideSmartphone class="size-4" />{{ contact.tel }}
     </div>
     <div class="inline-flex items-center gap-2">
-      <LucideMail class="size-4" />hello@philmataz.dev
+      <LucideMail class="size-4" />{{ contact.email }}
     </div>
 
     <div class="inline-flex items-center gap-2">
-      <LucideMap class="size-4" />Inselstr. 23, 45326 Essen
+      <LucideMap class="size-4" />{{ contact.address }}
     </div>
     <div class="inline-flex items-center gap-2 hover:text-red-vivid-300">
       <LucideGlobe class="size-4 text-white" />
       <a
         class="underline"
-        href="http://www.philmataz.dev"
+        :href="contact.website.href"
         target="_blank"
-        >philmataz.dev</a
+        >{{ contact.website.label }}</a
       >
     </div>
     <div class="inline-flex items-center gap-2 hover:text-red-vivid-300">
       <GithubLogoIcon class="size-4 fill-white" />
       <a
         class="underline"
-        href="http://www.github.com/PhilMataz"
+        :href="contact.github.href"
         target="_blank"
-        >github.com/PhilMataz</a
+        >{{ contact.github.label }}</a
       >
     </div>
     <div class="inline-flex items-center gap-2 hover:text-red-vivid-300">
       <LinkedInLogoIcon class="size-4 fill-white" />
       <a
         class="underline"
-        href="http://www.linkedin.com/in/phillip-matambanadzo/"
+        :href="contact.linkedin.href"
         target="_blank"
-        >linkedin.com/in/phillip-matambanadzo</a
+        >{{ contact.linkedin.label }}</a
       >
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import GithubLogoIcon from "../icons/github.vue";
-import LinkedInLogoIcon from "../icons/linkedIn.vue";
-</script>
