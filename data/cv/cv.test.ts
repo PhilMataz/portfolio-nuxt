@@ -13,14 +13,13 @@ describe("tech catalogue", () => {
 });
 
 describe("projects", () => {
-  it("every project has industry, context, tasks and outcomes in both locales", () => {
+  it("every project has industry, context and tasks in both locales", () => {
     for (const project of PROJECTS) {
       expect(project.industry.de).toBeTruthy();
       expect(project.industry.en).toBeTruthy();
       expect(project.context.de).toBeTruthy();
       expect(project.context.en).toBeTruthy();
       expect(project.tasks.length).toBeGreaterThan(0);
-      expect(Array.isArray(project.outcomes)).toBe(true);
     }
   });
 

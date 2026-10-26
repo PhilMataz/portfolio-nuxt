@@ -1,6 +1,6 @@
 import type { Experience } from "~/types/cv";
 
-export const EXPERIENCES = [
+export const EXPERIENCES: readonly Experience[] = [
   {
     title: {
       de: "Freiberuflicher Software Engineer",
@@ -22,4 +22,4 @@ export const EXPERIENCES = [
     city: "Essen",
     period: { start: "2018-01", end: "2021-06" },
   },
-] as const satisfies readonly Experience[];
+];

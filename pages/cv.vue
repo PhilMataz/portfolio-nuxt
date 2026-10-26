@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import type { Experience, Project } from "~/types/cv";
+import type { Project } from "~/types/cv";
 import { CV } from "~/data/cv";
 
-const { profile, projects } = CV;
-const experiences: readonly Experience[] = CV.experiences;
+const { profile, experiences, projects } = CV;
 
 useHead({
   title: `CV - ${profile.firstName} ${profile.lastName}`,
