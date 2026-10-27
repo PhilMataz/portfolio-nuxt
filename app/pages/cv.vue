@@ -7,7 +7,7 @@ const { tr, period } = useTranslated();
 
 // The document title (and so the PDF metadata) comes from the same Profile title as the header.
 useHead({
-  title: computed(() => `${profile.firstName} ${profile.lastName} – ${tr(profile.title)}`),
+  title: computed(() => documentTitle(profile, tr(profile.title))),
 });
 </script>
 

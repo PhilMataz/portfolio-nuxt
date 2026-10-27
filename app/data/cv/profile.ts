@@ -53,6 +53,18 @@ export const PROFILE = {
       en: "Technical leadership and team coordination",
     },
   ],
+  keywords: [
+    "Senior Fullstack Engineer",
+    "Freelancer",
+    "Vue.js",
+    "Nuxt",
+    "TypeScript",
+    "Node.js",
+    "Pinia",
+    "Vite",
+    "AWS",
+    "Azure",
+  ],
   contact: {
     tel: "+49 1590 656 2753",
     email: "hello@philmataz.dev",

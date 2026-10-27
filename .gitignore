@@ -7,7 +7,7 @@
 dist
 
 # PDF export (bun run pdf)
-export
+/export/
 
 # Node dependencies
 node_modules

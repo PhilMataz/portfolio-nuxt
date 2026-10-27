@@ -5,6 +5,7 @@ const profile = {
   firstName: "Phillip",
   lastName: "Matambanadzo",
   title: { de: "Titel", en: "Title" },
+  keywords: ["Vue.js", "TypeScript"],
 };
 
 describe("cvPath", () => {
@@ -23,21 +24,18 @@ describe("exportFileName", () => {
 
 describe("metadataFor", () => {
   it("builds the title from the name and the Profile title in the Locale", () => {
-    expect(metadataFor(profile, "de", []).title).toBe("Phillip Matambanadzo – Titel");
-    expect(metadataFor(profile, "en", []).title).toBe("Phillip Matambanadzo – Title");
+    expect(metadataFor(profile, "de").title).toBe("Phillip Matambanadzo – Titel");
+    expect(metadataFor(profile, "en").title).toBe("Phillip Matambanadzo – Title");
   });
 
   it("names the author and a localised subject", () => {
-    expect(metadataFor(profile, "de", []).author).toBe("Phillip Matambanadzo");
-    expect(metadataFor(profile, "de", []).subject).toBe("Freelancer-Profil / Projektliste");
-    expect(metadataFor(profile, "en", []).subject).toBe("Freelancer profile / Project list");
+    expect(metadataFor(profile, "de").author).toBe("Phillip Matambanadzo");
+    expect(metadataFor(profile, "de").subject).toBe("Freelancer-Profil / Projektliste");
+    expect(metadataFor(profile, "en").subject).toBe("Freelancer profile / Project list");
   });
 
-  it("passes the keywords through", () => {
-    expect(metadataFor(profile, "en", ["Vue.js", "TypeScript"]).keywords).toEqual([
-      "Vue.js",
-      "TypeScript",
-    ]);
+  it("takes the keywords from the Profile", () => {
+    expect(metadataFor(profile, "en").keywords).toEqual(["Vue.js", "TypeScript"]);
   });
 });
 

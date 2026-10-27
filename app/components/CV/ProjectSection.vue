@@ -34,11 +34,13 @@ const { tr, period } = useTranslated();
 
       <div class="flex flex-col">
         <!-- Padding, not gap, spaces the Projects: a Project moved to a new page keeps
-             its top padding, while a margin would be truncated at the page break. -->
+             its top padding, while a margin would be truncated at the page break.
+             data-project lets the PDF export measure each Project and name one that is
+             taller than a page (scripts/cv/export-pdf.ts). -->
         <div
           v-for="project in projects"
           :key="project.company + project.period.start"
-          :data-project="project.company"
+          :data-project="`${project.company} (${project.period.start})`"
           class="flex flex-col gap-1 pt-10 break-inside-avoid-page first:pt-0"
         >
           <h4 class="font-semibold text-sm mb-1">

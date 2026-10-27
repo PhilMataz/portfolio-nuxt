@@ -18,7 +18,7 @@ import {
 
 const LOCALES: readonly Locale[] = ["de", "en"];
 const EXPORT_DIR = "export";
-const PORT = Number(process.env.PDF_PORT ?? 3100);
+const PORT = 3100;
 const ORIGIN = `http://localhost:${PORT}`;
 const SERVER_TIMEOUT_MS = 30_000;
 
@@ -53,7 +53,7 @@ function measureProjects(page: Page): Promise<ProjectMeasurement[]> {
   );
 }
 
-async function exportLocale(page: Page, locale: Locale, year: number): Promise<void> {
+async function printLocale(page: Page, locale: Locale, year: number): Promise<void> {
   await page.goto(`${ORIGIN}${cvPath(locale)}`, { waitUntil: "networkidle" });
   await page.emulateMedia({ media: "print" });
   await page.evaluate(() => document.fonts.ready);
@@ -70,7 +70,7 @@ async function exportLocale(page: Page, locale: Locale, year: number): Promise<v
 
   const printed = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true });
 
-  const metadata = metadataFor(CV.profile, locale, CV.skills);
+  const metadata = metadataFor(CV.profile, locale);
   const pdf = await PDFDocument.load(printed);
   pdf.setTitle(metadata.title);
   pdf.setAuthor(metadata.author);
@@ -92,7 +92,7 @@ async function main(): Promise<void> {
   try {
     const page = await browser.newPage();
     const year = new Date().getFullYear();
-    for (const locale of LOCALES) await exportLocale(page, locale, year);
+    for (const locale of LOCALES) await printLocale(page, locale, year);
   } finally {
     await browser.close();
     server.kill();

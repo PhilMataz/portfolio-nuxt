@@ -76,6 +76,8 @@ export type Profile = {
   summary: Translated;
   /** Four to six short themes saying what the user is hired for. Each is backed by Projects. */
   focusAreas: readonly Translated[];
+  /** Core terms a recruiter searches for; written into the exported PDF's keyword metadata. */
+  keywords: readonly string[];
   contact: {
     tel: string;
     email: string;
