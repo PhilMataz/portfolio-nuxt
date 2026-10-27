@@ -20,7 +20,7 @@ _Avoid_: localized string, i18n string, DE/EN pair
 One of the supported CV languages, `de` and `en`. German is the default Locale: it is shown when no Locale is named.
 
 **Project**:
-One engagement for a client or employer, with a role, company, industry, period, optional team size, context, tasks, outcomes and tech list. Every text part is Translated, so it exists in every locale.
+One engagement for a client or employer, with a role, company, industry, period, optional team size, context, tasks, outcomes and tech list. Every text part is Translated, so it exists in every locale. Exactly one Project is open-ended at any time: the current engagement.
 _Avoid_: job, gig, position
 
 **Context**:

@@ -13,9 +13,27 @@ function parse(value: YearMonth): { year: number; month: number } {
   return { year: year!, month: month! };
 }
 
-/** True when `value` is a four-digit year and a month from 01 to 12, as in "2023-11". */
+/**
+ * True when `value` is a four-digit year and a month from 01 to 12, as in "2023-11".
+ * The `YearMonth` type already rejects a bad month; this adds the year length
+ * and guards data that reached the tests through a cast.
+ */
 export function isValidYearMonth(value: string): value is YearMonth {
   return /^\d{4}-(0[1-9]|1[0-2])$/.test(value);
+}
+
+/** True when both months of `period` pass `isValidYearMonth`. */
+export function isValidPeriod(period: Period): boolean {
+  return (
+    isValidYearMonth(period.start) && (period.end === undefined || isValidYearMonth(period.end))
+  );
+}
+
+/** The latest month any of `periods` mentions, start or end. */
+export function latestMonth(periods: readonly Period[]): YearMonth {
+  return periods
+    .flatMap((period) => [period.start, period.end ?? period.start])
+    .reduce((latest, month) => (monthsBetween(latest, month) > 0 ? month : latest));
 }
 
 /** Whole months from the first day of `start` to the first day of `end`. */
