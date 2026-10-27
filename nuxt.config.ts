@@ -8,6 +8,14 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  typescript: {
+    // The PDF export in scripts/ runs under Node, so it is typechecked with the node tsconfig.
+    // It imports the CV data, whose type imports use the app alias.
+    nodeTsConfig: {
+      include: ["../scripts/**/*.ts"],
+      compilerOptions: { paths: { "~/*": ["../app/*"] } },
+    },
+  },
   modules: ["@nuxtjs/i18n", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
   i18n: {
     // German is the default Locale (see CONTEXT.md): `/cv` is German, `/en/cv` is English.

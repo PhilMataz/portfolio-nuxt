@@ -47,6 +47,7 @@ bun run dev         # Start development server
 # Production
 bun run build       # Build for production
 bun run preview     # Preview production build
+bun run pdf         # Build, print the CV per Locale with Chromium, write export/*.pdf
 
 # Quality
 bun run typecheck   # vue-tsc over the Nuxt project references
@@ -73,12 +74,19 @@ bun run test        # vitest, including the date rules over the CV data
 │   └── utils/            # Period formatting
 ├── i18n/                 # Interface text per Locale
 ├── public/               # Static files
+├── scripts/cv/           # PDF export (bun run pdf)
 └── docs/adr/             # Architecture decisions
 ```
 
 ## 🌐 Locales
 
 German is the default Locale: `/cv` renders German, `/en/cv` renders English.
+
+## 📄 PDF export
+
+`bun run pdf` replaces printing from the browser. It builds the app, serves it, prints `/cv` and `/en/cv` to A4 with backgrounds in Chromium, sets the PDF metadata (title, author, subject, keywords) and writes `Phillip_Matambanadzo_CV_<year>_DE.pdf` and `_EN.pdf` into the git-ignored `export/` folder, reporting the page count per file. Before printing it checks that no Project is taller than one page; if one is, the export fails and names it (see `docs/adr/0002`).
+
+Chromium is installed once with `bunx playwright install chromium`.
 
 ## 🎨 Customization
 

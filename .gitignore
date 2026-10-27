@@ -6,6 +6,9 @@
 .cache
 dist
 
+# PDF export (bun run pdf)
+export
+
 # Node dependencies
 node_modules
 

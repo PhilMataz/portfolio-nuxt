@@ -38,6 +38,7 @@ const { tr, period } = useTranslated();
         <div
           v-for="project in projects"
           :key="project.company + project.period.start"
+          :data-project="project.company"
           class="flex flex-col gap-1 pt-10 break-inside-avoid-page first:pt-0"
         >
           <h4 class="font-semibold text-sm mb-1">

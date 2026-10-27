@@ -7,6 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "pdf": "nuxt build && bun scripts/cv/export-pdf.ts",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "lint": "oxlint",
@@ -30,6 +31,8 @@
     "husky": "^9.1.7",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.64.1",
     "typescript": "^6.0.3",
     "vitest": "^5.0.5",
     "vue-tsc": "^3.3.13"
