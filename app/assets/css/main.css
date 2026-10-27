@@ -49,11 +49,3 @@
   size: A4;
   margin: 0;
 }
-
-@media print {
-  /* The dark side column is part of the page frame, so it prints without the
-     "background graphics" option. */
-  .cv-print-frame {
-    print-color-adjust: exact;
-  }
-}

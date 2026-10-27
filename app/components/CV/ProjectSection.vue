@@ -18,7 +18,7 @@ const { tr, period } = useTranslated();
          flow onto, since the grid's own column background ends with its first page. -->
     <div
       aria-hidden="true"
-      class="cv-print-frame hidden print:fixed print:inset-y-0 print:left-0 print:-z-10 print:block print:w-[37%] bg-blue-grey-900"
+      class="hidden print:fixed print:inset-y-0 print:left-0 print:-z-10 print:block print:w-[37%] bg-blue-grey-900 print:[print-color-adjust:exact]"
     />
     <CVSide>
       <div class="flex flex-col gap-8 p-6 text-sm">

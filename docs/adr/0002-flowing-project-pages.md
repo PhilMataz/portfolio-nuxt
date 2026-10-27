@@ -10,4 +10,11 @@ With fixed boxes, every page was a component (`PageContainer`) that drew its own
 - The dark side column on every Projects page is a `position: fixed` box shown only in print. Fixed boxes repeat on each printed page in Chromium, which is what the grid column's own background does not do past its first page.
 - Spacing between Projects is padding on each Project rather than a flex gap or margin, because a margin at a page break is truncated while padding is kept, so a Project that opens a page still has its top spacing.
 
+## Assumptions
+
+- Every Project fits on one page. A Project taller than a page cannot be kept whole; the browser would cut it. Keep Projects shorter than that.
+- The fixed print column is 37% of the print viewport, the grid column 37% of the 210mm box. They line up only because the page is A4 with zero margin. Changing `@page` means checking the print preview.
+- The side column of the Projects box no longer pins Education to the top and References to the bottom; both sit at the top, since the box has no fixed bottom.
+- The dark side column prints regardless of the "background graphics" option, on page one as well, so the exported PDF looks the same on every machine.
+
 On screen, the Projects are one tall box with the usual border; it does not show page boundaries. The print preview is the only place to see where pages break. Fragmentation of flex and grid boxes is a Chromium feature; other engines may break differently, and the CV is exported from Chromium.
