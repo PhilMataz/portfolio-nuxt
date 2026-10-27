@@ -4,7 +4,7 @@ import { SKILLS } from "./skills";
 import { PROJECTS } from "./projects";
 import { EXPERIENCES } from "./experiences";
 import { timelineProblems } from "../../utils/timeline";
-import { industriesOf } from "../../utils/industries";
+import { industriesOf, translatedKey } from "../../utils/industries";
 import { PROFILE } from "./profile";
 
 describe("tech catalogue", () => {
@@ -50,8 +50,12 @@ describe("profile", () => {
   });
 
   it("summary opens with the title's role in both locales", () => {
-    expect(PROFILE.summary.de.trim()).toMatch(/^Senior Fullstack-Entwickler/);
-    expect(PROFILE.summary.en.trim()).toMatch(/^Senior Fullstack Engineer/);
+    expect(PROFILE.summary.de.trim()).toMatch(
+      /^Senior Fullstack-Entwickler mit Vue.js- und TypeScript/,
+    );
+    expect(PROFILE.summary.en.trim()).toMatch(
+      /^Senior Fullstack Engineer specialising in Vue.js and TypeScript/,
+    );
   });
 
   it("has four to six Focus areas in both locales", () => {
@@ -64,13 +68,11 @@ describe("profile", () => {
   });
 });
 
-const industryKey = (i: { de: string; en: string }) => `${i.de}|${i.en}`;
-
 describe("industries", () => {
   it("are exactly the distinct Project industries", () => {
     const derived = industriesOf(PROJECTS);
-    const expected = new Set(PROJECTS.map((p) => industryKey(p.industry)));
-    expect(new Set(derived.map(industryKey))).toEqual(expected);
+    const expected = new Set(PROJECTS.map((p) => translatedKey(p.industry)));
+    expect(new Set(derived.map(translatedKey))).toEqual(expected);
     expect(derived.length).toBe(expected.size);
   });
 });
