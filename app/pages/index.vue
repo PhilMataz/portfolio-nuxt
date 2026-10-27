@@ -1,23 +1,22 @@
-<script setup>
-const { setLocale } = useI18n();
+<script setup lang="ts">
+const localePath = useLocalePath();
 </script>
 
 <template>
   <div>
     <div class="flex gap-2">
-      <button
+      <NuxtLink
         class="inline-flex rounded bg-teal-500 px-4 py-2 text-white"
-        @click="setLocale('en')"
+        :to="localePath('/cv', 'de')"
       >
-        en
-      </button>
-      <button
+        CV (Deutsch)
+      </NuxtLink>
+      <NuxtLink
         class="inline-flex rounded bg-teal-500 px-4 py-2 text-white"
-        @click="setLocale('fr')"
+        :to="localePath('/cv', 'en')"
       >
-        fr
-      </button>
-      <p>{{ $t("welcome") }}</p>
+        CV (English)
+      </NuxtLink>
     </div>
   </div>
 </template>

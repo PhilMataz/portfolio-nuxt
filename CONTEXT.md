@@ -17,7 +17,7 @@ A single piece of content text carried in every supported locale at once. A Tran
 _Avoid_: localized string, i18n string, DE/EN pair
 
 **Locale**:
-One of the supported CV languages, currently `de` and `en`.
+One of the supported CV languages, `de` and `en`. German is the default Locale: it is shown when no Locale is named.
 
 **Project**:
 One engagement for a client or employer, with a role, company, industry, period, optional team size, context, tasks, outcomes and tech list. Every text part is Translated, so it exists in every locale.
