@@ -1,22 +1,19 @@
 <script setup lang="ts">
+const { locales } = useI18n();
 const localePath = useLocalePath();
 </script>
 
 <template>
   <div>
-    <div class="flex gap-2">
+    <nav class="flex gap-2">
       <NuxtLink
+        v-for="entry in locales"
+        :key="entry.code"
         class="inline-flex rounded bg-teal-500 px-4 py-2 text-white"
-        :to="localePath('/cv', 'de')"
+        :to="localePath('/cv', entry.code)"
       >
-        CV (Deutsch)
+        CV ({{ entry.name ?? entry.code }})
       </NuxtLink>
-      <NuxtLink
-        class="inline-flex rounded bg-teal-500 px-4 py-2 text-white"
-        :to="localePath('/cv', 'en')"
-      >
-        CV (English)
-      </NuxtLink>
-    </div>
+    </nav>
   </div>
 </template>

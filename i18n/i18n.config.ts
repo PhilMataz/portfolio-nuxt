@@ -19,6 +19,7 @@ export default defineI18nConfig(() => ({
         references: "References",
         languages: "Languages",
         education: "Education",
+        selectLanguage: "Select a language",
       },
       period: {
         today: "today",
@@ -55,6 +56,7 @@ export default defineI18nConfig(() => ({
         references: "Referenzen",
         languages: "Sprachen",
         education: "Ausbildung",
+        selectLanguage: "Sprache wählen",
       },
       period: {
         today: "heute",
