@@ -1,7 +1,6 @@
-// Interface text only. CV content lives in data/cv (see CONTEXT.md).
+// Interface text only. CV content lives in app/data/cv (see CONTEXT.md).
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: "en",
   messages: {
     en: {
       cv: {

@@ -1,15 +1,17 @@
 <script setup lang="ts">
-const { setLocale } = useI18n();
-const selectedLanguage = ref("de");
+const { locale, locales } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
 
-const languages = [
-  { id: "de", label: "Deutsch" },
-  { id: "en", label: "English" },
-];
+const languages = computed(() =>
+  locales.value.map((entry) => ({
+    id: entry.code,
+    label: entry.name ?? entry.code,
+  })),
+);
 
-watchEffect(() => {
-  setLocale(selectedLanguage.value);
-});
+const selectedIndex = computed(() =>
+  languages.value.findIndex((language) => language.id === locale.value),
+);
 </script>
 
 <template>
@@ -19,30 +21,30 @@ watchEffect(() => {
       aria-label="Select a language"
       class="relative flex border-b border-blue-grey-200"
     >
-      <button
+      <NuxtLink
         v-for="language in languages"
         :id="`${language.id}-tab`"
         :key="language.id"
         role="tab"
-        :aria-selected="selectedLanguage === language.id"
+        :to="switchLocalePath(language.id)"
+        :aria-selected="locale === language.id"
         :aria-controls="`${language.id}-panel`"
-        class="flex-1 px-4 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-vivid-300 focus:ring-offset-2"
+        class="flex-1 px-4 py-2 text-center text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-vivid-300 focus:ring-offset-2"
         :class="{
           'border-b-2 border-red-vivid-300 text-red-vivid-300':
-            selectedLanguage === language.id,
+            locale === language.id,
           'text-blue-grey-500 hover:border-blue-grey-300 hover:text-blue-grey-700':
-            selectedLanguage !== language.id,
+            locale !== language.id,
         }"
-        @click="selectedLanguage = language.id"
       >
         {{ language.label }}
-      </button>
+      </NuxtLink>
 
       <!-- Sliding indicator - animates based on selected tab -->
       <div
         class="absolute bottom-0 h-0.5 bg-red-vivid-300 transition-all duration-300"
         :style="{
-          left: `${(languages.findIndex((language) => language.id === selectedLanguage) * 100) / languages.length}%`,
+          left: `${(selectedIndex * 100) / languages.length}%`,
           width: `${100 / languages.length}%`,
         }"
       />

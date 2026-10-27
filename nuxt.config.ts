@@ -8,11 +8,16 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: [
-    "@nuxtjs/i18n",
-    "nuxt-lucide-icons",
-    "@nuxtjs/google-fonts",
-  ],
+  modules: ["@nuxtjs/i18n", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
+  i18n: {
+    // German is the default Locale (see CONTEXT.md): `/cv` is German, `/en/cv` is English.
+    locales: [
+      { code: "de", language: "de-DE", name: "Deutsch" },
+      { code: "en", language: "en-GB", name: "English" },
+    ],
+    defaultLocale: "de",
+    strategy: "prefix_except_default",
+  },
   googleFonts: {
     families: {
       "Bebas Neue": [100, 200, 300, 400, 500, 600, 700, 800, 900],
