@@ -18,7 +18,7 @@ const selectedIndex = computed(() =>
   <div>
     <div
       role="tablist"
-      aria-label="Select a language"
+      :aria-label="$t('cv.selectLanguage')"
       class="relative flex border-b border-blue-grey-200"
     >
       <NuxtLink
