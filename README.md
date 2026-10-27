@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-A modern, responsive portfolio website showcasing my work experience, projects, and professional journey. Built with Nuxt 3 for performance and clean user experience.
+A modern, responsive portfolio website showcasing my work experience, projects, and professional journey. Built with Nuxt 4 for performance and clean user experience.
 
 ## 🌟 Features
 
@@ -12,7 +12,7 @@ A modern, responsive portfolio website showcasing my work experience, projects, 
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Nuxt 3
+- **Framework**: Nuxt 4
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide Icons
 - **Deployment**: Vercel
@@ -47,19 +47,36 @@ bun run dev         # Start development server
 # Production
 bun run build      # Build for production
 bun run preview    # Preview production build
+
+# Qu## 📦 Project Structure
+
 ```
 
-## 📦 Project Structure
+├── app/
+│ ├── app.vue
+│ ├── assets/css/ # Global styles
+│ ├── components/CV/ # CV sections
+│ ├── composables/ # useTranslated
+│ ├── data/cv/ # CV Content, each fact once (see CONTEXT.md)
+│ ├── pages/ # / and /cv
+│ ├── types/ # CV types
+│ └── utils/ # Period formatting
+├── i18n/ # Interface text per Locale
+├── public/ # Static files
+├── server/ # Nitro (empty)
+└── docs/adr/ # Architecture decisions
 
 ```
-├── components/          # Reusable Vue components
-├── pages/              # Application pages
-├── public/             # Static files
-├── assets/
-│   ├── css/           # Global styles
-│   └── images/        # Project images
-├── composables/        # Shared composable functions
-└── content/           # Markdown content for projects
+
+## 🌐 Locales
+
+German is the default Locale: `/cv` renders German, `/en/cv` renders English.
+
+## 🎨 Customization
+
+Update the CV Content in `app/data/cv/` and Interface text in `i18n/i18n.config.ts`.
+
+ects
 ```
 
 ## 🎨 Customization
