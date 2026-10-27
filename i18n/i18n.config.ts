@@ -5,6 +5,8 @@ export default defineI18nConfig(() => ({
     en: {
       cv: {
         summary: "Summary",
+        focusAreas: "Focus Areas",
+        industries: "Industries",
         experience: "Work Experience",
         techSkills: "Tech Skills",
         projects: "Project Experience",
@@ -42,6 +44,8 @@ export default defineI18nConfig(() => ({
     de: {
       cv: {
         summary: "Zusammenfassung",
+        focusAreas: "Themenschwerpunkte",
+        industries: "Branchenerfahrung",
         experience: "Arbeitserfahrung",
         techSkills: "Tech Skills",
         projects: "Projekterfahrung",

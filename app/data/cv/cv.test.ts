@@ -4,6 +4,8 @@ import { SKILLS } from "./skills";
 import { PROJECTS } from "./projects";
 import { EXPERIENCES } from "./experiences";
 import { timelineProblems } from "../../utils/timeline";
+import { industriesOf } from "../../utils/industries";
+import { PROFILE } from "./profile";
 
 describe("tech catalogue", () => {
   it("spells Vue.js and has no bare Vue", () => {
@@ -38,6 +40,38 @@ describe("projects", () => {
 describe("timeline", () => {
   it("has sound Periods, one open Project, and an Experience behind every Project month", () => {
     expect(timelineProblems(PROJECTS, EXPERIENCES)).toEqual([]);
+  });
+});
+
+describe("profile", () => {
+  it("title names the role and stack", () => {
+    expect(PROFILE.title.de).toBe("Senior Fullstack-Entwickler (Vue.js / TypeScript)");
+    expect(PROFILE.title.en).toBe("Senior Fullstack Engineer (Vue.js / TypeScript)");
+  });
+
+  it("summary opens with the title's role in both locales", () => {
+    expect(PROFILE.summary.de.trim()).toMatch(/^Senior Fullstack-Entwickler/);
+    expect(PROFILE.summary.en.trim()).toMatch(/^Senior Fullstack Engineer/);
+  });
+
+  it("has four to six Focus areas in both locales", () => {
+    expect(PROFILE.focusAreas.length).toBeGreaterThanOrEqual(4);
+    expect(PROFILE.focusAreas.length).toBeLessThanOrEqual(6);
+    for (const area of PROFILE.focusAreas) {
+      expect(area.de).toBeTruthy();
+      expect(area.en).toBeTruthy();
+    }
+  });
+});
+
+const industryKey = (i: { de: string; en: string }) => `${i.de}|${i.en}`;
+
+describe("industries", () => {
+  it("are exactly the distinct Project industries", () => {
+    const derived = industriesOf(PROJECTS);
+    const expected = new Set(PROJECTS.map((p) => industryKey(p.industry)));
+    expect(new Set(derived.map(industryKey))).toEqual(expected);
+    expect(derived.length).toBe(expected.size);
   });
 });
 

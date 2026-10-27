@@ -71,8 +71,11 @@ export type Link = { label: string; href: string };
 export type Profile = {
   firstName: string;
   lastName: string;
+  /** Shown in the page-one header and used as the source of the document title. */
   title: Translated;
   summary: Translated;
+  /** Four to six short themes saying what the user is hired for. Each is backed by Projects. */
+  focusAreas: readonly Translated[];
   contact: {
     tel: string;
     email: string;
