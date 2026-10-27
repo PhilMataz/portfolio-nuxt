@@ -31,8 +31,7 @@ const selectedIndex = computed(() =>
         :aria-controls="`${language.id}-panel`"
         class="flex-1 px-4 py-2 text-center text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-vivid-300 focus:ring-offset-2"
         :class="{
-          'border-b-2 border-red-vivid-300 text-red-vivid-300':
-            locale === language.id,
+          'border-b-2 border-red-vivid-300 text-red-vivid-300': locale === language.id,
           'text-blue-grey-500 hover:border-blue-grey-300 hover:text-blue-grey-700':
             locale !== language.id,
         }"

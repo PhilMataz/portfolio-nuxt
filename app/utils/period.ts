@@ -29,10 +29,8 @@ function formatLength(totalMonths: number, words: PeriodWords): string {
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
   const parts: string[] = [];
-  if (years > 0)
-    parts.push(`${years} ${years === 1 ? words.year : words.years}`);
-  if (months > 0)
-    parts.push(`${months} ${months === 1 ? words.month : words.months}`);
+  if (years > 0) parts.push(`${years} ${years === 1 ? words.year : words.years}`);
+  if (months > 0) parts.push(`${months} ${months === 1 ? words.month : words.months}`);
   return parts.join(", ");
 }
 

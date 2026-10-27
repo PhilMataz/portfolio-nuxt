@@ -5,19 +5,7 @@ export type Locale = "de" | "en";
 /** A piece of content carried in every supported locale at once. */
 export type Translated = Record<Locale, string>;
 
-type Month =
-  | "01"
-  | "02"
-  | "03"
-  | "04"
-  | "05"
-  | "06"
-  | "07"
-  | "08"
-  | "09"
-  | "10"
-  | "11"
-  | "12";
+type Month = "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09" | "10" | "11" | "12";
 
 /** "2023-11" */
 export type YearMonth = `${number}-${Month}`;

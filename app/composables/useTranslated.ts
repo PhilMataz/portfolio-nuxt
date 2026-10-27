@@ -9,8 +9,7 @@ function isLocale(value: string): value is Locale {
 export function useTranslated() {
   const { locale, t } = useI18n();
 
-  const tr = (value: Translated): string =>
-    value[isLocale(locale.value) ? locale.value : "en"];
+  const tr = (value: Translated): string => value[isLocale(locale.value) ? locale.value : "en"];
 
   const periodWords = computed<PeriodWords>(() => ({
     today: t("period.today"),

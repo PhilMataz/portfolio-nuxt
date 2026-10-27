@@ -21,9 +21,7 @@ const { tr } = useTranslated();
           {{ education.degree }}
         </h5>
         <div>
-          <span v-if="'program' in education">
-            {{ tr(education.program) }} ·
-          </span>
+          <span v-if="'program' in education"> {{ tr(education.program) }} · </span>
           {{ education.school }}
         </div>
         <span>

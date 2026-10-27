@@ -27,6 +27,4 @@ export type { Skill } from "./skills";
 type UsedTech = (typeof PROJECTS)[number]["technologies"][number];
 type UnusedSkill = Exclude<Skill, UsedTech>;
 type Assert<T extends true> = T;
-export type SkillsAreUsed = Assert<
-  UnusedSkill extends never ? true : UnusedSkill
->;
+export type SkillsAreUsed = Assert<UnusedSkill extends never ? true : UnusedSkill>;
