@@ -18,9 +18,7 @@ for (let i = 0; i < projects.length; i += 2) {
 
 <template>
   <div class="flex w-full flex-col items-center font-light text-blue-grey-900">
-    <CVLanguageSelector
-      class="mx-auto w-full max-w-screen-sm p-4 print:hidden"
-    />
+    <CVLanguageSelector class="mx-auto w-full max-w-screen-sm p-4 print:hidden" />
 
     <CVPageContainer>
       <CVSide>
@@ -71,12 +69,8 @@ for (let i = 0; i < projects.length; i += 2) {
             <h4 class="font-medium">
               {{ tr(experience.title).toUpperCase() }}
             </h4>
-            <span class="text-sm"
-              >{{ experience.company }} - {{ experience.city }}</span
-            >
-            <span class="text-sm">{{
-              period(experience.period, { withLength: false })
-            }}</span>
+            <span class="text-sm">{{ experience.company }} - {{ experience.city }}</span>
+            <span class="text-sm">{{ period(experience.period, { withLength: false }) }}</span>
             <span
               v-if="experience.note"
               class="text-sm italic"
