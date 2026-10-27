@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { formatPeriod, formatYearRange, monthsBetween } from "./period";
+import {
+  covers,
+  formatPeriod,
+  formatYearRange,
+  isValidYearMonth,
+  monthsBetween,
+  monthsOf,
+} from "./period";
 
 const words = {
   today: "today",
@@ -57,5 +64,54 @@ describe("formatYearRange", () => {
   it("renders a range or a single year", () => {
     expect(formatYearRange({ from: 2010, to: 2015 })).toBe("2010 - 2015");
     expect(formatYearRange({ from: 2009 })).toBe("2009");
+  });
+});
+
+describe("monthsOf", () => {
+  it("lists every month from start to end, both included", () => {
+    expect(monthsOf({ start: "2021-11", end: "2022-02" }, "2025-12")).toEqual([
+      "2021-11",
+      "2021-12",
+      "2022-01",
+      "2022-02",
+    ]);
+  });
+
+  it("runs an open Period up to the horizon", () => {
+    expect(monthsOf({ start: "2025-10" }, "2026-01")).toEqual([
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+    ]);
+  });
+});
+
+describe("covers", () => {
+  it("includes the start and end months and nothing outside", () => {
+    const period = { start: "2021-06", end: "2021-12" } as const;
+    expect(covers(period, "2021-06")).toBe(true);
+    expect(covers(period, "2021-12")).toBe(true);
+    expect(covers(period, "2021-05")).toBe(false);
+    expect(covers(period, "2022-01")).toBe(false);
+  });
+
+  it("covers every month after the start of an open Period", () => {
+    expect(covers({ start: "2022-01" }, "2031-07")).toBe(true);
+    expect(covers({ start: "2022-01" }, "2021-12")).toBe(false);
+  });
+});
+
+describe("isValidYearMonth", () => {
+  it("accepts a four-digit year and a month from 01 to 12", () => {
+    expect(isValidYearMonth("2023-11")).toBe(true);
+    expect(isValidYearMonth("2024-01")).toBe(true);
+  });
+
+  it("rejects a month outside 01 to 12 or a malformed year", () => {
+    expect(isValidYearMonth("2023-13")).toBe(false);
+    expect(isValidYearMonth("2023-00")).toBe(false);
+    expect(isValidYearMonth("23-11")).toBe(false);
+    expect(isValidYearMonth("2023-1")).toBe(false);
   });
 });

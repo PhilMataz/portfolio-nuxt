@@ -48,7 +48,7 @@ A Tech chosen for display in the skills section. Every Skill must appear in the 
 _Avoid_: technology (when meaning the skills list), tech skill
 
 **Experience**:
-A span of contractual status: employed by a company, or self-employed. An Experience has a title, company, city and Period, and an optional one-line note explaining an overlap. Experiences carry no work content; that lives on Projects.
+A span of contractual status: employed by a company, or self-employed. An Experience has a title, company, city and Period, and an optional one-line note explaining an overlap. Experiences carry no work content; that lives on Projects. Every month of every Project falls within at least one Experience; a Project may span a change of Experience. Gaps between Experiences are normal and not checked.
 _Avoid_: work history, employment (when meaning self-employment too)
 
 **Workload**:

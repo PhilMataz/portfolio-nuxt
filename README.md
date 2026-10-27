@@ -51,8 +51,10 @@ bun run preview     # Preview production build
 # Quality
 bun run typecheck   # vue-tsc over the Nuxt project references
 bun run lint        # oxlint
-bun run fmt         # oxfmt (fmt:check runs in the pre-commit hook)
-bun run test        # vitest
+bun run fmt         # oxfmt
+bun run test        # vitest, including the date rules over the CV data
+
+# The pre-commit hook runs typecheck, test, lint and fmt:check.
 ```
 
 ## 📦 Project Structure

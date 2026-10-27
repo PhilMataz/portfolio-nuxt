@@ -13,11 +13,36 @@ function parse(value: YearMonth): { year: number; month: number } {
   return { year: year!, month: month! };
 }
 
+/** True when `value` is a four-digit year and a month from 01 to 12, as in "2023-11". */
+export function isValidYearMonth(value: string): value is YearMonth {
+  return /^\d{4}-(0[1-9]|1[0-2])$/.test(value);
+}
+
 /** Whole months from the first day of `start` to the first day of `end`. */
 export function monthsBetween(start: YearMonth, end: YearMonth): number {
   const a = parse(start);
   const b = parse(end);
   return (b.year - a.year) * 12 + (b.month - a.month);
+}
+
+/**
+ * Every month of `period`, start and end included. An open Period runs
+ * up to `horizon`, the latest month the caller knows about.
+ */
+export function monthsOf(period: Period, horizon: YearMonth): YearMonth[] {
+  const { year, month } = parse(period.start);
+  const count = monthsBetween(period.start, period.end ?? horizon) + 1;
+  return Array.from({ length: Math.max(count, 0) }, (_, i) => {
+    const index = year * 12 + (month - 1) + i;
+    const m = String((index % 12) + 1).padStart(2, "0");
+    return `${Math.floor(index / 12)}-${m}` as YearMonth;
+  });
+}
+
+/** True when `month` lies within `period`, start and end included. An open Period covers every later month. */
+export function covers(period: Period, month: YearMonth): boolean {
+  if (monthsBetween(period.start, month) < 0) return false;
+  return period.end === undefined || monthsBetween(month, period.end) >= 0;
 }
 
 function formatYearMonth(value: YearMonth): string {

@@ -3,6 +3,7 @@ import { TECH } from "./tech";
 import { SKILLS } from "./skills";
 import { PROJECTS } from "./projects";
 import { EXPERIENCES } from "./experiences";
+import { timelineProblems } from "../../utils/timeline";
 
 describe("tech catalogue", () => {
   it("spells Vue.js and has no bare Vue", () => {
@@ -31,6 +32,12 @@ describe("projects", () => {
         expect(sentences.length).toBeLessThanOrEqual(3);
       }
     }
+  });
+});
+
+describe("timeline", () => {
+  it("has sound Periods, one open Project, and an Experience behind every Project month", () => {
+    expect(timelineProblems(PROJECTS, EXPERIENCES)).toEqual([]);
   });
 });
 
