@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import type { Project } from "~/types/cv";
 import { CV } from "~/data/cv";
 
-const { profile, experiences, projects } = CV;
+const { profile, experiences } = CV;
 
 const { tr, period } = useTranslated();
 
@@ -10,11 +9,6 @@ const { tr, period } = useTranslated();
 useHead({
   title: computed(() => `${profile.firstName} ${profile.lastName} – ${tr(profile.title)}`),
 });
-
-const projectTuples: (readonly Project[])[] = [];
-for (let i = 0; i < projects.length; i += 2) {
-  projectTuples.push(projects.slice(i, i + 2));
-}
 </script>
 
 <template>
@@ -89,11 +83,6 @@ for (let i = 0; i < projects.length; i += 2) {
         </div>
       </div>
     </CVPageContainer>
-    <CVProjectPage
-      v-for="(projects, index) in projectTuples"
-      :key="index"
-      :projects="projects"
-      :has-header="index === 0"
-    />
+    <CVProjectSection />
   </div>
 </template>

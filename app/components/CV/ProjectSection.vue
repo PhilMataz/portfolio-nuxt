@@ -1,38 +1,44 @@
 <script setup lang="ts">
+// The Projects are one flowing document, not fixed pages: the browser places as many
+// Projects on a page as fit and moves the next one over whole (see docs/adr/0002).
 import type { Project } from "~/types/cv";
+import { CV } from "~/data/cv";
 
-interface Props {
-  projects: readonly Project[];
-  hasHeader: boolean;
-}
-
-defineProps<Props>();
+// Widened from the literal tuple so optional fields (teamSize, workload) are addressable.
+const projects: readonly Project[] = CV.projects;
 
 const { tr, period } = useTranslated();
 </script>
 
 <template>
-  <CVPageContainer>
+  <div
+    class="grid min-h-[297mm] w-[210mm] grid-cols-[37%_1fr] rounded border border-blue-grey-200 print:border-none"
+  >
+    <!-- Print page frame: a fixed box repeats the side column on every page the Projects
+         flow onto, since the grid's own column background ends with its first page. -->
+    <div
+      aria-hidden="true"
+      class="cv-print-frame hidden print:fixed print:inset-y-0 print:left-0 print:-z-10 print:block print:w-[37%] bg-blue-grey-900"
+    />
     <CVSide>
-      <div class="flex h-full flex-col justify-between p-6 text-sm">
-        <template v-if="hasHeader">
-          <CVEducationSection />
-          <CVReferencesSection />
-        </template>
+      <div class="flex flex-col gap-8 p-6 text-sm">
+        <CVEducationSection />
+        <CVReferencesSection />
       </div>
     </CVSide>
     <div class="p-6">
       <CVSectionHeader
-        v-if="hasHeader"
         title="cv.projects"
         class="text-red-vivid-300"
       />
 
-      <div class="flex flex-col gap-10">
+      <div class="flex flex-col">
+        <!-- Padding, not gap, spaces the Projects: a Project moved to a new page keeps
+             its top padding, while a margin would be truncated at the page break. -->
         <div
           v-for="project in projects"
           :key="project.company + project.period.start"
-          class="flex flex-col gap-1"
+          class="flex flex-col gap-1 pt-10 break-inside-avoid-page first:pt-0"
         >
           <h4 class="font-semibold text-sm mb-1">
             {{ tr(project.role).toUpperCase() }} |
@@ -101,5 +107,5 @@ const { tr, period } = useTranslated();
         </div>
       </div>
     </div>
-  </CVPageContainer>
+  </div>
 </template>

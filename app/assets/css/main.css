@@ -42,3 +42,18 @@
   --color-blue-grey-800: #243b53;
   --color-blue-grey-900: #102a43;
 }
+
+/* The print page frame: A4 with no browser margin, so the 210mm boxes fill each page
+   and the flowing Projects document breaks at page height (see docs/adr/0002). */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  /* The dark side column is part of the page frame, so it prints without the
+     "background graphics" option. */
+  .cv-print-frame {
+    print-color-adjust: exact;
+  }
+}
