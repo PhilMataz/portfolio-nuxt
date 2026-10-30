@@ -100,7 +100,7 @@ describe("industries", () => {
 
   it("orders Segments within a Sector by the most recent Project", () => {
     expect(industries[0]?.segments.map((segment) => segment.de)).toEqual([
-      "Fertigung / Industrie-IoT",
+      "Fertigung / Industrie-IoT / Machine Learning",
       "E-Commerce",
       "Aftermarket / Ersatzteile",
     ]);

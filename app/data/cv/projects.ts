@@ -81,10 +81,13 @@ export const PROJECTS = [
   },
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
-    company: "INDTACT GMBH",
+    company: "Kakadu Labs",
     industry: {
       sector: "automotive",
-      segment: { de: "Fertigung / Industrie-IoT", en: "Manufacturing / industrial IoT" },
+      segment: {
+        de: "Fertigung / Industrie-IoT / Machine Learning",
+        en: "Manufacturing / industrial IoT / machine learning",
+      },
     },
     period: { start: "2024-10", end: "2025-06" },
     technologies: [
@@ -92,47 +95,72 @@ export const PROJECTS = [
       "Vue.js",
       "Nuxt",
       "Tailwind CSS",
-      "Node.js",
+      "DaisyUI",
+      "ECharts",
       "WebSocket",
+      "Node.js",
       "Drizzle ORM",
       "PostgreSQL",
-      "Python",
+      "Zod",
       "Docker",
+      "Git",
+      "GitHub",
       "JavaScript",
       "HTML",
       "CSS",
     ],
     context: {
-      de: "Ich entwickelte das Frontend und das BFF (Backend-for-Frontend) für ein Qualitätssicherungssystem, das in der Automobilfertigung eingesetzt wird. Das System kommuniziert mit spezialisierten Bluetooth-Geräten (SmartClicks), um Klangsignaturen zu erfassen und die korrekte Installation von Steckverbindern sicherzustellen.",
-      en: "I developed the frontend and BFF (Backend-for-Frontend) for a quality assurance system used in automotive manufacturing. The system interfaces with specialized Bluetooth devices (SmartClicks) to collect sound signatures and ensure correct connector installation.",
+      de: "SmartClick Training Suite für die iNDTact GmbH: Sensordaten von Bluetooth-Geräten (SmartClicks) in der Automobilfertigung werden erfasst und gelabelt, neuronale Netze darauf trainiert und auf die Geräte gespielt. Ich verantwortete die Nuxt-Anwendung vom Tablet-HMI bis zum BFF, bis Dezember 2024 in Teilzeit neben SMG, danach in Vollzeit.",
+      en: "SmartClick Training Suite for iNDTact GmbH: sensor data from Bluetooth SmartClick devices on automotive production lines is collected and labelled, neural networks are trained on it and deployed to the devices. I owned the Nuxt application from the tablet HMI to the BFF, part-time alongside SMG until December 2024, then full-time.",
     },
     tasks: [
       {
-        de: "Entwurf einer domain-driven Frontend-Architektur mit Nuxt und TypeScript",
-        en: "Architecting a domain-driven frontend structure using Nuxt and TypeScript",
+        de: "Konkretisierung vager Anforderungen mit Kakadu Labs und iNDTact mit Rückfragen und Prototypen, die die Nutzung prägten",
+        en: "Turned vague requirements from Kakadu Labs and iNDTact into concrete ones with questions and prototypes that shaped its use",
       },
       {
-        de: "Implementierung von Echtzeit-WebSocket-Verbindungen zur Datenerfassung und Live-Überwachung",
-        en: "Implementing real-time WebSocket connections for data collection and live monitoring",
+        de: "Tablet-HMI zur Datenerfassung: Aufzeichnung von Sensormessungen, Tagging und Labeling mit Autocomplete, Dark Theme, Optimierung für iPad",
+        en: "Tablet HMI for data collection: recording sensor measurements, tagging and labelling with autocomplete, dark theme, optimised for iPad",
       },
       {
-        de: "Erstellung eines Gerätemanagement-Dashboards für die Konfiguration von Gateways und SmartClicks",
-        en: "Building a device management dashboard for gateway and SmartClick configuration",
+        de: "Gerätemanagement: Gateways und SmartClicks mit Batteriestand und RSSI, Konfiguration von Burst-Erkennung, Filtern und Übertragungsmodus, Soll-Ist-Abgleich",
+        en: "Device management: gateways and SmartClicks with battery level and RSSI, configuration of burst detection, filters and transmit mode, desired-versus-current sync",
       },
       {
-        de: "Entwicklung von Datenerfassungsschnittstellen für die Aufzeichnung und Kennzeichnung von Klangsignaturen",
-        en: "Creating data collection interfaces for sound signature recording and labeling",
+        de: "Live-Ansicht über WebSocket: Echtzeit-Charts von Rohsensordaten und Ergebnissen des neuronalen Netzes (ECharts), Migration auf v2-Endpunkte",
+        en: "Live view over WebSocket: real-time charts of raw sensor data and neural-network results (ECharts), migrated to v2 endpoints",
       },
       {
-        de: "Entwurf und Implementierung von RESTful APIs mit Drizzle ORM und PostgreSQL",
-        en: "Designing and implementing RESTful APIs using Drizzle ORM and PostgreSQL",
+        de: "Data Explorer: Sichtung erfasster Sensordaten mit Charts und Metadaten-Tabelle, Start von Trainingsläufen",
+        en: "Data Explorer: reviewing collected sensor data with charts and a metadata table, starting training runs",
       },
       {
-        de: "Entwicklung von Echtzeit-Visualisierungen für Feedback zur Verbindungsqualität",
-        en: "Developing real-time visualizations for connection quality feedback",
+        de: "BFF mit Nuxt-Server-Routen auf PostgreSQL (Drizzle ORM): 8 Routenmodule für Gateways, Gerätekonfiguration, Sensordaten, Tags und Labels, Validierung mit Zod",
+        en: "BFF with Nuxt server routes on PostgreSQL (Drizzle ORM): 8 route modules for gateways, device configuration, sensor data, tags and labels, validation with Zod",
+      },
+      {
+        de: "Domain-Refactoring: Repository-Logik in Domänenmodule für SmartClicks und Explorer, Gerätemodell auf SmartClick-Modell migriert; schnellere Gateway-Geräteabfrage",
+        en: "Domain refactoring: repository logic into domain modules for SmartClicks and Explorer, device model migrated to the SmartClick model; faster gateway devices query",
+      },
+      {
+        de: "Setup: ESLint, Prettier, Runtime-Config, Upgrade auf Tailwind CSS 4 und DaisyUI 5, Corporate Design, semantische Fieldsets (Barrierefreiheit), i18n DE/EN",
+        en: "Setup: ESLint, Prettier, runtime config, upgrade to Tailwind CSS 4 and DaisyUI 5, corporate design, semantic fieldsets (accessibility), i18n EN/DE",
+      },
+      {
+        de: "Leitung der Frontend-Arbeit: Schätzung und Aufgabenverteilung mit einem Backend-Kollegen, Review und Mentoring in Vue und Nuxt; manuelle Tests gegen BLE-Emulator und Docker-Compose-Stack; 134 Commits per GitHub-Pull-Request",
+        en: "Led the frontend work: estimated and split tasks with a backend colleague, reviewed and mentored him in Vue and Nuxt; manual testing against the BLE emulator and Docker Compose stack; 134 commits via GitHub pull requests",
       },
     ],
-    outcomes: [],
+    outcomes: [
+      {
+        de: "Inbetriebnahme in einer Automobil-Produktionslinie, mit dem vollständigen Kreislauf von Datenerfassung über Training bis Live-Auswertung",
+        en: "In use on an automotive production line, with the complete loop from data collection through training to live evaluation",
+      },
+      {
+        de: "Die Nuxt-Anwendung ging vom Prototyp zum ausgelieferten Produkt, mit mir als Hauptautor",
+        en: "The Nuxt application went from prototype to delivered product, with me as its main author",
+      },
+    ],
   },
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },

@@ -21,7 +21,6 @@ export const SKILLS = [
   "CSS",
   "WebSocket",
   "Git",
-  "Python",
   "Kubernetes",
   "Docker",
   "AWS",
