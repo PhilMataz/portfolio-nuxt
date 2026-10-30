@@ -17,11 +17,12 @@ export const PROFILE = {
       Fachbereichen und Product Ownern zusammen, gestaltet Anforderungen
       aktiv mit und nutzt Prototyping, um Produktentscheidungen frühzeitig
       zu konkretisieren. In internationalen Enterprise-Projekten übernahm
-      er technische Führungsverantwortung. Coding-Agenten setzt er
-      strukturiert ein, mit TDD, automatisierten Qualitätsprüfungen und
-      dokumentierten Architekturentscheidungen; diese Arbeitsweise führte
-      er in einem Enterprise-Projekt ein und etablierte mit dem Team
-      entsprechende Best Practices.`,
+      er technische Führungsverantwortung und leitete umfangreiche
+      Modernisierungen. Bei der KI-gestützten Softwareentwicklung setzt er
+      Coding-Agenten strukturiert ein: mit TDD, automatisierten
+      Qualitätsprüfungen und dokumentierten Architekturentscheidungen.
+      Diese Arbeitsweise führte er in einem Enterprise-Projekt ein und
+      etablierte gemeinsam mit dem Team entsprechende Best Practices.`,
     en: `Phillip Matambanadzo is a Senior Fullstack Engineer with around
       ten years in the JavaScript and TypeScript ecosystem. He builds and
       modernises complex web applications across the whole stack: Node.js
