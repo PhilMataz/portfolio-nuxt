@@ -28,10 +28,8 @@ describe("timelineProblems", () => {
     expect(problems).toContainEqual(expect.stringContaining("2023-02"));
   });
 
-  it("reports when no Project is open-ended", () => {
-    expect(timelineProblems([dated("Acme", "2023-01", "2023-06")], [freelance])).toContainEqual(
-      expect.stringContaining("no Project is open-ended"),
-    );
+  it("accepts a CV with no open-ended Project", () => {
+    expect(timelineProblems([dated("Acme", "2023-01", "2023-06")], [freelance])).toEqual([]);
   });
 
   it("names every open-ended Project when there is more than one", () => {

@@ -49,7 +49,7 @@ describe("projects", () => {
 });
 
 describe("timeline", () => {
-  it("has sound Periods, one open Project, and an Experience behind every Project month", () => {
+  it("has sound Periods, at most one open Project, and an Experience behind every Project month", () => {
     expect(timelineProblems(PROJECTS, EXPERIENCES)).toEqual([]);
   });
 });

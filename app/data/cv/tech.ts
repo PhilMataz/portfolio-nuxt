@@ -16,6 +16,7 @@ export const TECH = [
   "Vite",
   "Webpack",
   "Vitest",
+  "Playwright",
   "Jest",
   "Cypress",
   "Tailwind CSS",
@@ -36,6 +37,7 @@ export const TECH = [
   "AWS SQS",
   "AWS SNS",
   "Azure",
+  "Azure DevOps",
   "Google Cloud Functions",
   "Datadog",
   "Drizzle ORM",
@@ -50,6 +52,8 @@ export const TECH = [
   "Cheerio",
   "Puppeteer",
   "Postman",
+  "Jira",
+  "Claude Code",
 ] as const;
 
 export type Tech = (typeof TECH)[number];

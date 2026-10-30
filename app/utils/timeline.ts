@@ -57,11 +57,10 @@ function periodProblems(kind: Kind, item: Dated): string[] {
   return problems;
 }
 
-/** Exactly one Project is open-ended. */
+/** At most one Project is open-ended: the current engagement, if there is one. */
 function openProjectProblems(projects: readonly Dated[]): string[] {
   const open = projects.filter(isOpen);
-  if (open.length === 1) return [];
-  if (open.length === 0) return ["no Project is open-ended; exactly one must be"];
+  if (open.length <= 1) return [];
   return open.map((p) => `${label("Project", p)}: open-ended, but only one Project may be`);
 }
 
