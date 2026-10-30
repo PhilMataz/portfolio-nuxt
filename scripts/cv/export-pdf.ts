@@ -62,9 +62,13 @@ async function printLocale(page: Page, locale: Locale, year: number): Promise<vo
   if (measured.length === 0) throw new Error(`No Projects found on ${cvPath(locale)}`);
   const oversized = oversizedProjects(measured, A4_HEIGHT_PX);
   if (oversized.length > 0) {
+    const overrun = (name: string) => {
+      const heightPx = measured.find((m) => m.name === name)?.heightPx ?? 0;
+      return `${name} (+${(((heightPx - A4_HEIGHT_PX) * 25.4) / 96).toFixed(1)} mm)`;
+    };
     throw new Error(
       `Project${oversized.length > 1 ? "s" : ""} taller than one A4 page (${locale}): ` +
-        `${oversized.join(", ")}. Shorten ${oversized.length > 1 ? "them" : "it"} so the browser can keep each Project on one page.`,
+        `${oversized.map(overrun).join(", ")}. Shorten ${oversized.length > 1 ? "them" : "it"} so the browser can keep each Project on one page.`,
     );
   }
 
