@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { CV } from "~/data/cv";
 
-const { profile, experiences } = CV;
+const { profile } = CV;
 
-const { tr, period } = useTranslated();
+const { tr } = useTranslated();
 
 // The document title (and so the PDF metadata) comes from the same Profile title as the header.
 useHead({
@@ -28,7 +28,7 @@ useHead({
           <CVLanguageSection />
         </div>
       </CVSide>
-      <div class="flex flex-col gap-5 p-6">
+      <div class="flex flex-col gap-4 p-6">
         <div>
           <h1 class="font-display flex flex-col leading-none">
             <span class="-ml-1 -mt-2 text-9xl"> {{ profile.firstName }} </span>
@@ -45,7 +45,7 @@ useHead({
             title="cv.summary"
             class="text-red-vivid-300"
           />
-          <p class="text-sm leading-snug">
+          <p class="text-sm leading-tight">
             {{ tr(profile.summary) }}
           </p>
         </div>
@@ -53,34 +53,6 @@ useHead({
         <CVFocusAreaSection />
 
         <CVIndustrySection />
-
-        <!-- WORK EXPERIENCE -->
-        <div>
-          <CVSectionHeader
-            title="cv.experience"
-            class="text-red-vivid-300"
-          />
-          <div class="flex flex-col gap-3">
-            <div
-              v-for="(experience, index) in experiences"
-              :key="index"
-              class="flex flex-col gap-px"
-            >
-              <h4 class="text-sm font-medium">
-                {{ tr(experience.title).toUpperCase() }}
-              </h4>
-              <span class="text-sm">
-                {{ experience.company }} - {{ experience.city }} ·
-                {{ period(experience.period, { withLength: false }) }}
-              </span>
-              <span
-                v-if="experience.note"
-                class="text-sm italic"
-                >{{ tr(experience.note) }}</span
-              >
-            </div>
-          </div>
-        </div>
       </div>
     </CVPageContainer>
     <CVProjectSection />

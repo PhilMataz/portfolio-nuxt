@@ -1,3 +1,4 @@
+import type { SectorId } from "~/data/cv/sectors";
 import type { Tech } from "~/data/cv/tech";
 
 export type Locale = "de" | "en";
@@ -19,12 +20,18 @@ export type YearRange = { from: number; to?: number };
 /** Hours per week, stated only when a Project was not full-time. */
 export type Workload = { hoursPerWeek: number };
 
+/** The Sector a client operates in, from the catalogue, with an optional Segment within it. */
+export type Industry = {
+  sector: SectorId;
+  /** A sub-area within the Sector, for example "E-Commerce" within Automotive. */
+  segment?: Translated;
+};
+
 /** One engagement for a client or employer. See CONTEXT.md. */
 export type Project = {
   role: Translated;
   company: string;
-  /** The sector the client operates in, named so a recruiter can match it. */
-  industry: Translated;
+  industry: Industry;
   period: Period;
   teamSize?: number;
   /** One to three sentences saying what the Project was and why it existed. */
@@ -74,7 +81,7 @@ export type Profile = {
   /** Shown in the page-one header and used as the source of the document title. */
   title: Translated;
   summary: Translated;
-  /** Four to six short themes saying what the user is hired for. Each is backed by Projects. */
+  /** Four to seven short themes saying what the user is hired for. Each is backed by Projects. */
   focusAreas: readonly Translated[];
   /** Core terms a recruiter searches for; written into the exported PDF's keyword metadata. */
   keywords: readonly string[];

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { CV } from "~/data/cv";
-import { industriesOf } from "~/utils/industries";
+import { industriesOf, industryGroupText } from "~/utils/industries";
 
 const { tr } = useTranslated();
 
@@ -14,8 +14,8 @@ const industries = industriesOf(CV.projects);
       title="cv.industries"
       class="text-red-vivid-300"
     />
-    <div class="text-sm leading-snug">
-      {{ industries.map(tr).join(" · ") }}
+    <div class="text-sm leading-tight">
+      {{ industries.map((group) => industryGroupText(group, tr)).join(" · ") }}
     </div>
   </div>
 </template>

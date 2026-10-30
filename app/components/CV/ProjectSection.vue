@@ -3,6 +3,7 @@
 // Projects on a page as fit and moves the next one over whole (see docs/adr/0002).
 import type { Project } from "~/types/cv";
 import { CV } from "~/data/cv";
+import { industryText } from "~/utils/industries";
 
 // Widened from the literal tuple so optional fields (teamSize, workload) are addressable.
 const projects: readonly Project[] = CV.projects;
@@ -22,6 +23,7 @@ const { tr, period } = useTranslated();
     />
     <CVSide>
       <div class="flex flex-col gap-8 p-6 text-sm">
+        <CVExperienceSection />
         <CVEducationSection />
         <CVReferencesSection />
       </div>
@@ -56,7 +58,7 @@ const { tr, period } = useTranslated();
           </span>
           <div class="text-sm">
             <span class="italic">{{ $t("cv.industry") }}:</span>
-            {{ tr(project.industry) }}
+            {{ industryText(project.industry, tr) }}
             <template v-if="project.teamSize">
               · <span class="italic">{{ $t("cv.teamSize") }}:</span>
               {{ project.teamSize }}

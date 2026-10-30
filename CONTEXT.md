@@ -36,8 +36,16 @@ What changed because of the Project's work. A number appears in an Outcome only 
 _Avoid_: achievement, result, success, Erfolg (in code)
 
 **Industry**:
-The sector the Project's client operates in (Branchenerfahrung), named so a recruiter can match it.
-_Avoid_: sector, domain, Branche (in code)
+Where a Project's client operates: a Sector, optionally narrowed by a Segment. Named so a recruiter can match it.
+_Avoid_: domain, Branche (in code)
+
+**Sector**:
+The normalised top-level industry of a Project's client, chosen from the single Sector catalogue and named once per Locale. Two Projects in the same line of business share the identical Sector; a near-variant of an existing Sector is never added.
+_Avoid_: industry (when meaning the catalogue entry), vertical
+
+**Segment**:
+The optional sub-area within a Sector that a Project worked in, for example "E-Commerce" within Automotive. Free text per Project; it carries all the variation that the Sector does not.
+_Avoid_: sub-industry, niche
 
 **Tech**:
 A technology name from the single catalogue. Every tech list and every Skill uses a name from the catalogue, spelled exactly as it appears there.
@@ -56,12 +64,12 @@ The hours per week a Project took, stated only when it was not full-time, so an 
 _Avoid_: part-time, availability (which means future capacity)
 
 **Focus area**:
-One of four to six short themes on page one that say what the user is hired for (Themenschwerpunkte). Each focus area is backed by Projects; it is a heading for work, not a keyword list.
+One of four to seven short themes on page one that say what the user is hired for (Themenschwerpunkte). Each focus area is backed by Projects; it is a heading for work, not a keyword list.
 _Avoid_: specialty, keyword, Themenschwerpunkt (in code)
 
 **Industries**:
-The list of distinct Industry values across all Projects, derived for page one and never stored on their own.
-_Avoid_: sectors, Branchenerfahrung (in code)
+The Sectors across all Projects, each listed once with the Segments worked in it, derived for page one and never stored on their own. Sectors are ordered by how many Projects they hold, then by the most recent Project; Segments within a Sector by the most recent Project.
+_Avoid_: sectors (when meaning the page-one list), Branchenerfahrung (in code)
 
 **Period**:
 The span of a Project or experience, given as a start month and an optional end month. A Period without an end is ongoing and is shown as "today". Its length is computed, never written down.

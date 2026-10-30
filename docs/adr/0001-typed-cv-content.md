@@ -6,4 +6,5 @@ The CV is bilingual, and the Nuxt convention is to put every string into i18n me
 
 - Adding a locale means adding it to `Locale`; every `Translated` without it fails the typecheck, which is intended.
 - Content is not editable through i18n tooling. That's acceptable for a single-author CV.
+- Sector names follow the same catalogue pattern as technology names (`data/cv/sectors.ts`, keyed by id), so a Project cannot introduce a near-duplicate industry; variation goes into the Project's optional Segment, and the page-one Industries line is grouped from the catalogue.
 - Periods are stored as `YYYY-MM` and lengths computed at render time (whole months between the two month starts), so durations can no longer be mistyped.

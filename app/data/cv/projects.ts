@@ -4,10 +4,7 @@ export const PROJECTS = [
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "Bilfinger Global IT",
-    industry: {
-      de: "Industrieservices / Engineering",
-      en: "Industrial services / engineering",
-    },
+    industry: { sector: "industrialServices" },
     period: { start: "2025-08" },
     technologies: [
       "TypeScript",
@@ -63,8 +60,8 @@ export const PROJECTS = [
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "INDTACT GMBH",
     industry: {
-      de: "Automobilindustrie / Industrie-IoT",
-      en: "Automotive / industrial IoT",
+      sector: "automotive",
+      segment: { de: "Fertigung / Industrie-IoT", en: "Manufacturing / industrial IoT" },
     },
     period: { start: "2024-10", end: "2025-06" },
     technologies: [
@@ -117,10 +114,7 @@ export const PROJECTS = [
   {
     role: { de: "Senior Fullstack Engineer", en: "Senior Fullstack Engineer" },
     company: "SMG",
-    industry: {
-      de: "Immobilienplattformen / Online-Marktplätze",
-      en: "Real estate platforms / online marketplaces",
-    },
+    industry: { sector: "realEstate" },
     period: { start: "2023-11", end: "2024-12" },
     technologies: [
       "TypeScript",
@@ -169,8 +163,8 @@ export const PROJECTS = [
     role: { de: "Senior Frontend Engineer", en: "Senior Frontend Engineer" },
     company: "Mercedes-benz.io",
     industry: {
-      de: "Automobilindustrie / E-Commerce",
-      en: "Automotive / e-commerce",
+      sector: "automotive",
+      segment: { de: "E-Commerce", en: "E-commerce" },
     },
     period: { start: "2021-12", end: "2023-09" },
     technologies: [
@@ -241,8 +235,8 @@ export const PROJECTS = [
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Auteon",
     industry: {
-      de: "Automotive-Aftermarket / E-Commerce",
-      en: "Automotive aftermarket / e-commerce",
+      sector: "automotive",
+      segment: { de: "Aftermarket / Ersatzteile", en: "Aftermarket / spare parts" },
     },
     period: { start: "2021-10", end: "2022-04" },
     technologies: [
@@ -299,10 +293,7 @@ export const PROJECTS = [
   {
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Ruhrkraft GmbH",
-    industry: {
-      de: "Digital Signage / Werbetechnik",
-      en: "Digital signage / advertising",
-    },
+    industry: { sector: "digitalSignage" },
     period: { start: "2020-09", end: "2021-09" },
     technologies: [
       "TypeScript",
@@ -348,7 +339,7 @@ export const PROJECTS = [
   {
     role: { de: "Fullstack Engineer", en: "Fullstack Engineer" },
     company: "Westend Druckereibetriebe",
-    industry: { de: "Druckindustrie", en: "Printing industry" },
+    industry: { sector: "printing" },
     period: { start: "2018-01", end: "2021-07" },
     technologies: [
       "TypeScript",
