@@ -31,51 +31,67 @@ export const PROJECTS = [
       "CSS",
     ],
     context: {
-      de: "Ich entwickelte eine live betriebene Ressourcenplanungs-Anwendung in einem Scrum-Team mit fünf Entwicklern und drei Product Ownern über den gesamten Stack weiter und verantwortete Architekturentscheidungen, Testing-Strategie und KI-gestützte Entwicklung mit Claude Code.",
-      en: "I continued the development of a live resource planning application across the whole stack in a Scrum team of five developers and three product owners and owned architecture decisions, the testing strategy and AI-assisted development with Claude Code.",
+      de: "Er entwickelte eine live betriebene Ressourcenplanungs-Anwendung in einem Scrum-Team mit fünf Entwicklern und drei Product Ownern über den gesamten Stack weiter und verantwortete Architekturentscheidungen, Testing-Strategie und KI-gestützte Entwicklung mit Claude Code.",
+      en: "He continued the development of a live resource planning application across the whole stack in a Scrum team of five developers and three product owners and owned architecture decisions, the testing strategy and AI-assisted development with Claude Code.",
     },
     tasks: [
       {
-        de: "Anforderungsklärung mit den Fachbereichen: Meeting-Aufzeichnungen per LLM gegen Annahmen und Codebasis geprüft, 12 PRDs verfasst",
-        en: "Clarified requirements with business stakeholders: checked meeting recordings against assumptions and the codebase with an LLM, wrote 12 PRDs",
+        de: "Anforderungsklärung mit den Fachbereichen und Erstellung von 12 PRDs",
+        en: "Clarified requirements with business stakeholders and wrote 12 PRDs",
       },
       {
-        de: "Zerlegung der Epics in kleine, agentengerechte Jira-Tickets mit Aufwandsschätzung: 149 Tickets verfasst (31 Stories, 97 Teilaufgaben), 192 abgeschlossen",
-        en: "Broke epics down into small, agent-sized Jira tickets including effort estimates: wrote 149 tickets (31 stories, 97 sub-tasks), resolved 192",
+        de: "Zerlegung von Epics in agentengerechte Jira-Tickets mit Aufwandsschätzung",
+        en: "Broke epics down into agent-sized Jira tickets with effort estimates",
       },
       {
-        de: "UI/UX-Konzeption mit 9 agentisch erzeugten HTML-Prototypen für Entscheidungen mit den Product Ownern",
-        en: "UI/UX concept work with 9 agent-generated HTML prototypes for decisions with the product owners",
+        de: "UI/UX-Konzeption mit HTML-Prototypen als Entscheidungsgrundlage für die Product Owner",
+        en: "UI/UX concept work with HTML prototypes as the decision basis for the product owners",
       },
       {
-        de: "Architektur-Dokumentation für Team und Coding-Agenten: 42 ADRs, Glossar mit 57 Begriffen; Neuordnung des Datenmodells mit 15 SQL-Migrationen; Shared-Types-Paket als Frontend-Backend-Vertrag",
-        en: "Architecture documentation for team and coding agents: 42 ADRs, 57-term glossary; data model redesign with 15 SQL migrations; shared-types package as the frontend-backend contract",
+        de: "Architektur-Dokumentation in ADRs und einem Fachglossar für Team und Coding-Agenten",
+        en: "Architecture documentation in ADRs and a domain glossary for team and coding agents",
       },
       {
-        de: "Testing-Strategie für das bis dahin testfreie Produkt: Akzeptanzspezifikation mit AC-IDs (30 ACs, 77 % in Tests referenziert), 66 Vitest-Suites, Test-Gate in der PR-Pipeline, Git-Hooks",
-        en: "Testing strategy for a product that had no tests: acceptance spec with AC IDs (30 ACs, 77 % referenced by tests), 66 Vitest suites, test gate in the PR pipeline, Git hooks",
+        de: "Neuordnung des Datenmodells mit 15 SQL-Migrationen; Shared-Types-Paket als Frontend-Backend-Vertrag",
+        en: "Data model redesign with 15 SQL migrations; shared-types package as the frontend-backend contract",
       },
       {
-        de: "KI-gestützte Entwicklung mit Claude Code: TDD als Standard, repo-übergreifender Review-Skill nach Googles Code-Review-Standard (23 Reviews), Docker-Sandbox-Schleife; dem Team vorgestellt, das danach ein automatisiertes PR-Review einführte",
-        en: "AI-assisted development with Claude Code: TDD as the default, a cross-repo review skill following Google's code review standard (23 reviews), a Docker sandbox loop; presented to the team, which then introduced an automated PR review",
+        de: "Aufbau der Testing-Strategie für das bis dahin testfreie Produkt: Akzeptanzkriterien mit IDs, Vitest-Suites, Test-Gate in der PR-Pipeline, Git-Hooks",
+        en: "Built the testing strategy for a product that had no tests: acceptance criteria with IDs, Vitest suites, test gate in the PR pipeline, Git hooks",
       },
       {
-        de: "Backend mit Node.js und Prisma auf MSSQL (91 Pull Requests): REST-Endpunkte für Equipment, Personen, Kapazitäten und Qualifikationen, Bryntum-CrudManager-Sync, Register fachlicher Ablehnungscodes",
-        en: "Backend with Node.js and Prisma on MSSQL (91 pull requests): REST endpoints for equipment, persons, capacities and qualifications, Bryntum CrudManager sync, a refusal-code registry",
+        de: "Einführung KI-gestützter Entwicklung mit Claude Code: TDD als Standard, Review-Skill, Docker-Sandbox für Agentenläufe",
+        en: "Introduced AI-assisted development with Claude Code: TDD as the default, a review skill, a Docker sandbox for agent runs",
       },
       {
-        de: "Performance: Endpunkt von 8,4 s auf rund 1 s, Batch-Inserts, Chunking unter dem 2100-Parameter-Limit von SQL Server; zeitzonenneutrale Datumslogik",
-        en: "Performance: one endpoint from 8.4 s to about 1 s, batch inserts, chunking under SQL Server's 2100-parameter limit; timezone-neutral date logic",
+        de: "Entwicklung von REST-Endpunkten mit Node.js, Prisma und MSSQL (Equipment, Personen, Kapazitäten, Qualifikationen) inkl. Bryntum-CrudManager-Sync; Batch-Inserts und Chunking unter dem Parameterlimit von SQL Server",
+        en: "Developed REST endpoints with Node.js, Prisma and MSSQL (equipment, persons, capacities, qualifications) including Bryntum CrudManager sync; batch inserts and chunking under SQL Server's parameter limit",
       },
       {
-        de: "Frontend: Scheduler mit Bryntum und AG Grid, Einführung von Pinia Colada, Migration von Webpack auf Vite; Review von 89 Pull Requests von sieben Kollegen",
-        en: "Frontend: scheduler with Bryntum and AG Grid, introduced Pinia Colada, migrated from Webpack to Vite; reviewed 89 pull requests from seven colleagues",
+        de: "Entwicklung des Schedulers mit Bryntum und AG Grid; Einführung von Pinia Colada; Migration von Webpack auf Vite",
+        en: "Developed the scheduler with Bryntum and AG Grid; introduced Pinia Colada; migrated from Webpack to Vite",
+      },
+      {
+        de: "Code-Reviews für das Team (89 Pull Requests von sieben Kollegen)",
+        en: "Code reviews for the team (89 pull requests from seven colleagues)",
       },
     ],
     outcomes: [
       {
-        de: "Test- und Review-Gates in der PR-Pipeline, Architektur- und Testentscheidungen in 42 ADRs nachlesbar",
-        en: "Test and review gates in the PR pipeline; architecture and testing decisions readable in 42 ADRs",
+        de: "Antwortzeit eines zentralen Endpunkts von 8,4 s auf rund 1 s reduziert",
+        en: "Response time of a central endpoint reduced from 8.4 s to about 1 s",
+      },
+      {
+        de: "Produkt von null auf 66 Vitest-Suites gebracht; 77 % der Akzeptanzkriterien in Tests referenziert; Tests als Pflicht-Gate in der PR-Pipeline",
+        en: "Took the product from zero to 66 Vitest suites; 77 % of acceptance criteria referenced by tests; tests as a mandatory gate in the PR pipeline",
+      },
+      {
+        de: "42 Architekturentscheidungen als ADRs nachvollziehbar dokumentiert",
+        en: "42 architecture decisions documented as traceable ADRs",
+      },
+      {
+        de: "KI-Review-Ansatz im Team vorgestellt; das Team führte daraufhin ein automatisiertes PR-Review ein",
+        en: "Presented the AI review approach to the team, which then introduced an automated PR review",
       },
     ],
   },

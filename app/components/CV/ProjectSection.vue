@@ -68,7 +68,7 @@ const { tr, period } = useTranslated();
             <h5 class="text-sm italic">
               {{ $t("cv.technologies") }}
             </h5>
-            <div class="leading-tight">
+            <div class="text-sm leading-tight">
               {{ project.technologies.join(", ") }}
             </div>
           </div>
@@ -76,7 +76,7 @@ const { tr, period } = useTranslated();
             <h5 class="text-sm italic">
               {{ $t("cv.context") }}
             </h5>
-            <div class="leading-tight">
+            <div class="text-sm leading-tight">
               {{ tr(project.context) }}
             </div>
           </div>
