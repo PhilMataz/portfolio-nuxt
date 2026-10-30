@@ -10,6 +10,8 @@ export const TECH = [
   "Pinia",
   "Pinia Colada",
   "VueX",
+  "Vue Router",
+  "Vue I18n",
   "React",
   "Angular",
   "Meteor",
@@ -55,6 +57,8 @@ export const TECH = [
   "Puppeteer",
   "Postman",
   "Jira",
+  "Scrum",
+  "Auth0",
   "Claude Code",
 ] as const;
 

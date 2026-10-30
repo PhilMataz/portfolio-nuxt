@@ -186,8 +186,13 @@ export const PROJECTS = [
     technologies: [
       "TypeScript",
       "Vue.js",
+      "Vue Router",
+      "VueX",
+      "Vue I18n",
       "Vite",
       "Vitest",
+      "Cypress",
+      "Auth0",
       "Node.js",
       "AWS",
       "AWS API Gateway",
@@ -198,33 +203,69 @@ export const PROJECTS = [
       "AWS CDK",
       "Datadog",
       "Git",
+      "GitHub",
+      "Jira",
+      "Scrum",
       "JavaScript",
       "HTML",
       "CSS",
     ],
     context: {
-      de: "Ich arbeitete mit einem internationalen Team an der Verbesserung der Verkaufsprozesse von Homegate.ch und Immoscout24.ch. Ich leitete die Migration des Frontends von Vue 2 auf Vue 3 und der Backend-Infrastruktur von Serverless zu AWS CDK. Ich richtete Datadog-Monitoring ein und wendete SRE-Prinzipien an, um Zuverlässigkeit und Leistung zu verbessern.",
-      en: "I worked with an international team to improve the sales funnels of Homegate.ch and Immoscout24.ch. I led the upgrades of the frontend from Vue 2 to Vue 3 and of the backend infrastructure from Serverless to AWS CDK. I set up Datadog monitoring and applied SRE principles to improve reliability and performance.",
+      de: "Homegate.ch und ImmoScout24.ch, die beiden größten Immobilienportale der Schweiz, teilen sich einen Inserate-Funnel, in dem Privatverkäufer und Agenturen Inserate erfassen und bezahlen, die umsatzstärkste Sparte der Gruppe. Für die Vue-3-Migration geholt, arbeitete ich zuerst in Backend und Frontend des Funnels und plante und führte die Migration dann weitgehend allein durch.",
+      en: "Homegate.ch and ImmoScout24.ch, Switzerland's two largest property portals, share one listing-insertion funnel where private sellers and agencies create and pay for property ads, the group's largest revenue line. Hired for the Vue 3 migration, I first worked across the funnel's Lambda backend and Vue frontend, then planned and executed the migration essentially alone.",
     },
     tasks: [
       {
-        de: "Migration zu AWS CDK für besseres Infrastrukturmanagement",
-        en: "Migrating to AWS CDK for better infrastructure management",
+        de: "Planung, Leitung und Durchführung der Vue-2-auf-Vue-3-Migration des Multi-Brand-Frontends (155 Komponenten, 726 Dateien) in drei Monaten, regelmäßig rebased, während das Team weiter umsatzrelevante Features lieferte",
+        en: "Planned, led and executed the Vue 2 to Vue 3 migration of the multi-brand frontend (155 components, 726 files) in three months, rebasing regularly while the team kept shipping revenue features on main",
       },
       {
-        de: "Planung und Durchführung der Migration auf Vue 3",
-        en: "Planning and executing Vue 2 to Vue 3 upgrade",
+        de: "Vite und Vitest statt Nachrüsten der Webpack-Toolchain durchgesetzt, damit die App nur einmal migriert; Repo als Proof of Concept für die Vue-3-Gilde",
+        en: "Chose Vite and Vitest over patching the webpack toolchain so the app migrated only once; the repo became the proof of concept for the other teams in the cross-team Vue 3 guild",
       },
       {
-        de: "Implementierung von Datadog und SRE-Praktiken zur Steigerung der Zuverlässigkeit",
-        en: "Implementing Datadog and SRE practices to boost reliability",
+        de: "Ablösung des Headless-Chromium-Prerenderers durch vite-ssg für die SEO-Landingpages beider Marken; Auth, Routing und Designsystem Node-fähig gemacht",
+        en: "Replaced the headless-Chromium webpack prerenderer with vite-ssg for the localised SEO landing pages of both brands, making auth, routing and the design system run without a browser",
       },
       {
-        de: "Verbesserung der Entwicklungsumgebung für höhere Codequalität und Entwicklerproduktivität",
-        en: "Improving the dev environment for higher code quality and developer productivity",
+        de: "Migration der Testsuite von Jest und Vue Test Utils 1 auf Vitest und Vue Test Utils 2 bei gleicher Testabdeckung",
+        en: "Migrated the test suite from Jest and Vue Test Utils 1 to Vitest and Vue Test Utils 2, coverage maintained",
+      },
+      {
+        de: "Neuaufbau von Router, Auth0-Plugin und vue-i18n-Setup für Vue 3, Ablösung der Mixins durch Composables",
+        en: "Rewrote router, Auth0 plugin and vue-i18n setup for Vue 3 and replaced mixins with composables",
+      },
+      {
+        de: "Migration eines zweiten Frontend-Services (Suchabos) auf Vue 3 und Vite in zwei Wochen nach demselben Vorgehen",
+        en: "Migrated a second frontend service (search alerts) to Vue 3 and Vite in two weeks the same way",
+      },
+      {
+        de: "Migration der Backend-Lambdas inkl. SQS- und SNS-Listener von Serverless auf AWS CDK, mit zwei Kollegen",
+        en: "Co-migrated the backend Lambdas, including the SQS and SNS listeners, from Serverless Framework to AWS CDK",
+      },
+      {
+        de: "Datadog-Metriken in API und Frontend, darauf Alerts, SLOs, Dashboards und Slack-Alarmkanal",
+        en: "Instrumented API and frontend with Datadog metrics and built alerts, SLOs, dashboards and a Slack alert channel on top",
+      },
+      {
+        de: "Entwicklung des Crosslistings: ein Inserat der einen Marke auf der anderen buchen",
+        en: "Built crosslisting, so a listing on one brand can be booked onto the other",
+      },
+      {
+        de: "Präsentation der Ergebnisse und einer Phase-2-Roadmap (Composition API, Pinia, vue-i18n 10) vor allen Engineering-Teams und Stakeholdern, damit „fertig“ nicht als „schuldenfrei“ gilt",
+        en: 'Presented the results and a phase-two roadmap (Composition API, Pinia, vue-i18n 10) to all engineering teams and stakeholders, so "migration done" was not read as "debt gone"',
       },
     ],
-    outcomes: [],
+    outcomes: [
+      {
+        de: "Dev-Server-Start von rund 35 s auf unter eine Sekunde, Produktions-Build halbiert, Unit-Tests rund 30 % schneller",
+        en: "Dev-server start from about 35 s to under a second, production build halved, unit test suite about 30% faster",
+      },
+      {
+        de: "Für beide Marken live nach einer Woche teamweiter Tests auf Staging, nur kleine Korrekturen, kein Rollback",
+        en: "Live for both brands after a week of team-wide testing on staging, only minor fixes, no revert",
+      },
+    ],
   },
   {
     role: { de: "Senior Frontend Engineer", en: "Senior Frontend Engineer" },
